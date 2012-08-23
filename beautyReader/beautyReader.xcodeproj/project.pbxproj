@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E01300115E60A210070BF05 /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E012FFB15E60A210070BF05 /* FTAnimation+UIView.m */; };
+		5E01300215E60A210070BF05 /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E012FFD15E60A210070BF05 /* FTAnimationManager.m */; };
+		5E01300315E60A210070BF05 /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E01300015E60A210070BF05 /* FTUtils+NSObject.m */; };
+		5E01300515E60A400070BF05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E01300415E60A400070BF05 /* QuartzCore.framework */; };
+		5E01303615E61DA70070BF05 /* 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5E01303515E61DA70070BF05 /* 01.mp3 */; };
+		5E01303915E624A30070BF05 /* SystemInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E01303815E624A20070BF05 /* SystemInitialize.m */; };
+		5E01304115E626EF0070BF05 /* ChapterPO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E01304015E626EF0070BF05 /* ChapterPO.m */; };
+		5E01305515E62FB30070BF05 /* autumn.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305115E62FB30070BF05 /* autumn.xml */; };
+		5E01305615E62FB30070BF05 /* autumn.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305115E62FB30070BF05 /* autumn.xml */; };
+		5E01305715E62FB30070BF05 /* spring.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305215E62FB30070BF05 /* spring.xml */; };
+		5E01305815E62FB30070BF05 /* spring.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305215E62FB30070BF05 /* spring.xml */; };
+		5E01305915E62FB30070BF05 /* summer.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305315E62FB30070BF05 /* summer.xml */; };
+		5E01305A15E62FB30070BF05 /* summer.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305315E62FB30070BF05 /* summer.xml */; };
+		5E01305B15E62FB30070BF05 /* winter.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305415E62FB30070BF05 /* winter.xml */; };
+		5E01305C15E62FB30070BF05 /* winter.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305415E62FB30070BF05 /* winter.xml */; };
+		5E01306215E62FDB0070BF05 /* 01词汇.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305D15E62FDB0070BF05 /* 01词汇.txt */; };
+		5E01306315E62FDB0070BF05 /* 01词汇.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305D15E62FDB0070BF05 /* 01词汇.txt */; };
+		5E01306415E62FDB0070BF05 /* 01翻译.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305E15E62FDB0070BF05 /* 01翻译.txt */; };
+		5E01306515E62FDB0070BF05 /* 01翻译.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305E15E62FDB0070BF05 /* 01翻译.txt */; };
+		5E01306615E62FDB0070BF05 /* 01句子.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305F15E62FDB0070BF05 /* 01句子.txt */; };
+		5E01306715E62FDB0070BF05 /* 01句子.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01305F15E62FDB0070BF05 /* 01句子.txt */; };
+		5E01306815E62FDB0070BF05 /* 01英汉.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306015E62FDB0070BF05 /* 01英汉.txt */; };
+		5E01306915E62FDB0070BF05 /* 01英汉.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306015E62FDB0070BF05 /* 01英汉.txt */; };
+		5E01306A15E62FDB0070BF05 /* 01原文.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306115E62FDB0070BF05 /* 01原文.txt */; };
+		5E01306B15E62FDB0070BF05 /* 01原文.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306115E62FDB0070BF05 /* 01原文.txt */; };
+		5E01307215E635070070BF05 /* coreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E01307015E635070070BF05 /* coreData.xcdatamodeld */; };
+		5E01307615E637220070BF05 /* SUBJECT.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E01307515E637220070BF05 /* SUBJECT.m */; };
+		5EA7837115E608500099C166 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7836E15E608500099C166 /* RegexKitLite.m */; };
+		5EA7837215E608500099C166 /* RKLMatchEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7837015E608500099C166 /* RKLMatchEnumerator.m */; };
+		5EA7837515E608960099C166 /* IFTweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7837415E608960099C166 /* IFTweetLabel.m */; };
+		5EA7837715E608B10099C166 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7837615E608B10099C166 /* libicucore.A.dylib */; };
 		DFD6DA2B15E5160B00A7A6E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2A15E5160B00A7A6E7 /* UIKit.framework */; };
 		DFD6DA2D15E5160B00A7A6E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2C15E5160B00A7A6E7 /* Foundation.framework */; };
 		DFD6DA2F15E5160B00A7A6E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2E15E5160B00A7A6E7 /* CoreGraphics.framework */; };
@@ -52,6 +83,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E012FF915E60A210070BF05 /* FTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAnimation.h; path = foundation/FTAnimation/FTAnimation.h; sourceTree = "<group>"; };
+		5E012FFA15E60A210070BF05 /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTAnimation+UIView.h"; path = "foundation/FTAnimation/FTAnimation+UIView.h"; sourceTree = "<group>"; };
+		5E012FFB15E60A210070BF05 /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FTAnimation+UIView.m"; path = "foundation/FTAnimation/FTAnimation+UIView.m"; sourceTree = "<group>"; };
+		5E012FFC15E60A210070BF05 /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTAnimationManager.h; path = foundation/FTAnimation/FTAnimationManager.h; sourceTree = "<group>"; };
+		5E012FFD15E60A210070BF05 /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTAnimationManager.m; path = foundation/FTAnimation/FTAnimationManager.m; sourceTree = "<group>"; };
+		5E012FFE15E60A210070BF05 /* FTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTUtils.h; path = foundation/FTAnimation/FTUtils.h; sourceTree = "<group>"; };
+		5E012FFF15E60A210070BF05 /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTUtils+NSObject.h"; path = "foundation/FTAnimation/FTUtils+NSObject.h"; sourceTree = "<group>"; };
+		5E01300015E60A210070BF05 /* FTUtils+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FTUtils+NSObject.m"; path = "foundation/FTAnimation/FTUtils+NSObject.m"; sourceTree = "<group>"; };
+		5E01300415E60A400070BF05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5E01303515E61DA70070BF05 /* 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 01.mp3; path = resources/01.mp3; sourceTree = "<group>"; };
+		5E01303715E624A20070BF05 /* SystemInitialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemInitialize.h; path = foundation/utils/SystemInitialize.h; sourceTree = "<group>"; };
+		5E01303815E624A20070BF05 /* SystemInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SystemInitialize.m; path = foundation/utils/SystemInitialize.m; sourceTree = "<group>"; };
+		5E01303F15E626EF0070BF05 /* ChapterPO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChapterPO.h; path = model/PO/ChapterPO.h; sourceTree = "<group>"; };
+		5E01304015E626EF0070BF05 /* ChapterPO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChapterPO.m; path = model/PO/ChapterPO.m; sourceTree = "<group>"; };
+		5E01305115E62FB30070BF05 /* autumn.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = autumn.xml; path = config/autumn.xml; sourceTree = "<group>"; };
+		5E01305215E62FB30070BF05 /* spring.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = spring.xml; path = config/spring.xml; sourceTree = "<group>"; };
+		5E01305315E62FB30070BF05 /* summer.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = summer.xml; path = config/summer.xml; sourceTree = "<group>"; };
+		5E01305415E62FB30070BF05 /* winter.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = winter.xml; path = config/winter.xml; sourceTree = "<group>"; };
+		5E01305D15E62FDB0070BF05 /* 01词汇.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01词汇.txt"; path = "resources/01词汇.txt"; sourceTree = "<group>"; };
+		5E01305E15E62FDB0070BF05 /* 01翻译.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01翻译.txt"; path = "resources/01翻译.txt"; sourceTree = "<group>"; };
+		5E01305F15E62FDB0070BF05 /* 01句子.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01句子.txt"; path = "resources/01句子.txt"; sourceTree = "<group>"; };
+		5E01306015E62FDB0070BF05 /* 01英汉.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01英汉.txt"; path = "resources/01英汉.txt"; sourceTree = "<group>"; };
+		5E01306115E62FDB0070BF05 /* 01原文.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01原文.txt"; path = "resources/01原文.txt"; sourceTree = "<group>"; };
+		5E01307115E635070070BF05 /* coreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreData.xcdatamodel; sourceTree = "<group>"; };
+		5E01307415E637220070BF05 /* SUBJECT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUBJECT.h; path = model/coreData/SUBJECT.h; sourceTree = "<group>"; };
+		5E01307515E637220070BF05 /* SUBJECT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUBJECT.m; path = model/coreData/SUBJECT.m; sourceTree = "<group>"; };
+		5EA7836D15E608500099C166 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = foundation/RegexKitLite/RegexKitLite.h; sourceTree = "<group>"; };
+		5EA7836E15E608500099C166 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = foundation/RegexKitLite/RegexKitLite.m; sourceTree = "<group>"; };
+		5EA7836F15E608500099C166 /* RKLMatchEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKLMatchEnumerator.h; path = foundation/RegexKitLite/RKLMatchEnumerator.h; sourceTree = "<group>"; };
+		5EA7837015E608500099C166 /* RKLMatchEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKLMatchEnumerator.m; path = foundation/RegexKitLite/RKLMatchEnumerator.m; sourceTree = "<group>"; };
+		5EA7837315E608960099C166 /* IFTweetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFTweetLabel.h; path = foundation/utils/IFTweetLabel.h; sourceTree = "<group>"; };
+		5EA7837415E608960099C166 /* IFTweetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFTweetLabel.m; path = foundation/utils/IFTweetLabel.m; sourceTree = "<group>"; };
+		5EA7837615E608B10099C166 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = usr/lib/libicucore.A.dylib; sourceTree = SDKROOT; };
 		DFD6DA2615E5160B00A7A6E7 /* beautyReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beautyReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD6DA2A15E5160B00A7A6E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFD6DA2C15E5160B00A7A6E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +180,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E01300515E60A400070BF05 /* QuartzCore.framework in Frameworks */,
+				5EA7837715E608B10099C166 /* libicucore.A.dylib in Frameworks */,
 				DFEB663915E53A6000BD53A5 /* CoreData.framework in Frameworks */,
 				DFEB662F15E5388800BD53A5 /* libxml2.dylib in Frameworks */,
 				DFD6DA2B15E5160B00A7A6E7 /* UIKit.framework in Frameworks */,
@@ -137,6 +203,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E012FF815E609E80070BF05 /* FTAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				5E012FF915E60A210070BF05 /* FTAnimation.h */,
+				5E012FFA15E60A210070BF05 /* FTAnimation+UIView.h */,
+				5E012FFB15E60A210070BF05 /* FTAnimation+UIView.m */,
+				5E012FFC15E60A210070BF05 /* FTAnimationManager.h */,
+				5E012FFD15E60A210070BF05 /* FTAnimationManager.m */,
+				5E012FFE15E60A210070BF05 /* FTUtils.h */,
+				5E012FFF15E60A210070BF05 /* FTUtils+NSObject.h */,
+				5E01300015E60A210070BF05 /* FTUtils+NSObject.m */,
+			);
+			name = FTAnimation;
+			sourceTree = "<group>";
+		};
+		5E01300F15E60DD20070BF05 /* config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		5E01301015E60DF60070BF05 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5E01303515E61DA70070BF05 /* 01.mp3 */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		5E01301C15E61B6D0070BF05 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				5E01305115E62FB30070BF05 /* autumn.xml */,
+				5E01305215E62FB30070BF05 /* spring.xml */,
+				5E01305315E62FB30070BF05 /* summer.xml */,
+				5E01305415E62FB30070BF05 /* winter.xml */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		5E01301D15E61BB60070BF05 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5E01305D15E62FDB0070BF05 /* 01词汇.txt */,
+				5E01305E15E62FDB0070BF05 /* 01翻译.txt */,
+				5E01305F15E62FDB0070BF05 /* 01句子.txt */,
+				5E01306015E62FDB0070BF05 /* 01英汉.txt */,
+				5E01306115E62FDB0070BF05 /* 01原文.txt */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		5E01303E15E626A60070BF05 /* PO */ = {
+			isa = PBXGroup;
+			children = (
+				5E01303F15E626EF0070BF05 /* ChapterPO.h */,
+				5E01304015E626EF0070BF05 /* ChapterPO.m */,
+			);
+			name = PO;
+			sourceTree = "<group>";
+		};
+		5EA7836B15E608170099C166 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				5EA7836D15E608500099C166 /* RegexKitLite.h */,
+				5EA7836E15E608500099C166 /* RegexKitLite.m */,
+				5EA7836F15E608500099C166 /* RKLMatchEnumerator.h */,
+				5EA7837015E608500099C166 /* RKLMatchEnumerator.m */,
+			);
+			name = RegexKitLite;
+			sourceTree = "<group>";
+		};
 		DFD6DA1B15E5160A00A7A6E7 = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +298,9 @@
 		DFD6DA2915E5160B00A7A6E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EA7837615E608B10099C166 /* libicucore.A.dylib */,
 				DFEB662E15E5388800BD53A5 /* libxml2.dylib */,
+				5E01300415E60A400070BF05 /* QuartzCore.framework */,
 				DFEB663815E53A6000BD53A5 /* CoreData.framework */,
 				DFD6DA2A15E5160B00A7A6E7 /* UIKit.framework */,
 				DFD6DA2C15E5160B00A7A6E7 /* Foundation.framework */,
@@ -184,6 +325,8 @@
 		DFD6DA3115E5160B00A7A6E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E01301015E60DF60070BF05 /* resources */,
+				5E01300F15E60DD20070BF05 /* config */,
 				DFD6DA3215E5160B00A7A6E7 /* beautyReader-Info.plist */,
 				DFD6DA3315E5160B00A7A6E7 /* InfoPlist.strings */,
 				DFD6DA3615E5160B00A7A6E7 /* main.m */,
@@ -205,6 +348,8 @@
 		DFD6DA4F15E5160B00A7A6E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E01301D15E61BB60070BF05 /* resources */,
+				5E01301C15E61B6D0070BF05 /* config */,
 				DFD6DA5015E5160B00A7A6E7 /* beautyReaderTests-Info.plist */,
 				DFD6DA5115E5160B00A7A6E7 /* InfoPlist.strings */,
 			);
@@ -214,6 +359,7 @@
 		DFEB65EC15E5358C00BD53A5 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5E01303E15E626A60070BF05 /* PO */,
 				DFEB663015E5397200BD53A5 /* coreData */,
 				DFEB65F315E536D300BD53A5 /* STAppDelegate.h */,
 				DFEB65F415E536D300BD53A5 /* STAppDelegate.m */,
@@ -240,6 +386,8 @@
 		DFEB65FB15E537DE00BD53A5 /* foundation */ = {
 			isa = PBXGroup;
 			children = (
+				5E012FF815E609E80070BF05 /* FTAnimation */,
+				5EA7836B15E608170099C166 /* RegexKitLite */,
 				DFEB663415E539F000BD53A5 /* utils */,
 				DFEB65FC15E537E900BD53A5 /* touchXML */,
 			);
@@ -289,8 +437,11 @@
 		DFEB663015E5397200BD53A5 /* coreData */ = {
 			isa = PBXGroup;
 			children = (
+				5E01307415E637220070BF05 /* SUBJECT.h */,
+				5E01307515E637220070BF05 /* SUBJECT.m */,
 				DFEB663115E539BD00BD53A5 /* CoreDataFactory.h */,
 				DFEB663215E539BD00BD53A5 /* CoreDataFactory.m */,
+				5E01307015E635070070BF05 /* coreData.xcdatamodeld */,
 			);
 			name = coreData;
 			sourceTree = "<group>";
@@ -298,8 +449,12 @@
 		DFEB663415E539F000BD53A5 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				5EA7837315E608960099C166 /* IFTweetLabel.h */,
+				5EA7837415E608960099C166 /* IFTweetLabel.m */,
 				DFEB663515E53A3600BD53A5 /* FileUtils.h */,
 				DFEB663615E53A3600BD53A5 /* FileUtils.m */,
+				5E01303715E624A20070BF05 /* SystemInitialize.h */,
+				5E01303815E624A20070BF05 /* SystemInitialize.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -376,6 +531,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD6DA3515E5160B00A7A6E7 /* InfoPlist.strings in Resources */,
+				5E01303615E61DA70070BF05 /* 01.mp3 in Resources */,
+				5E01305515E62FB30070BF05 /* autumn.xml in Resources */,
+				5E01305715E62FB30070BF05 /* spring.xml in Resources */,
+				5E01305915E62FB30070BF05 /* summer.xml in Resources */,
+				5E01305B15E62FB30070BF05 /* winter.xml in Resources */,
+				5E01306215E62FDB0070BF05 /* 01词汇.txt in Resources */,
+				5E01306415E62FDB0070BF05 /* 01翻译.txt in Resources */,
+				5E01306615E62FDB0070BF05 /* 01句子.txt in Resources */,
+				5E01306815E62FDB0070BF05 /* 01英汉.txt in Resources */,
+				5E01306A15E62FDB0070BF05 /* 01原文.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +549,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD6DA5315E5160B00A7A6E7 /* InfoPlist.strings in Resources */,
+				5E01305615E62FB30070BF05 /* autumn.xml in Resources */,
+				5E01305815E62FB30070BF05 /* spring.xml in Resources */,
+				5E01305A15E62FB30070BF05 /* summer.xml in Resources */,
+				5E01305C15E62FB30070BF05 /* winter.xml in Resources */,
+				5E01306315E62FDB0070BF05 /* 01词汇.txt in Resources */,
+				5E01306515E62FDB0070BF05 /* 01翻译.txt in Resources */,
+				5E01306715E62FDB0070BF05 /* 01句子.txt in Resources */,
+				5E01306915E62FDB0070BF05 /* 01英汉.txt in Resources */,
+				5E01306B15E62FDB0070BF05 /* 01原文.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +605,16 @@
 				DFEB662D15E537F700BD53A5 /* XMLParseFactory.m in Sources */,
 				DFEB663315E539BD00BD53A5 /* CoreDataFactory.m in Sources */,
 				DFEB663715E53A3600BD53A5 /* FileUtils.m in Sources */,
+				5EA7837115E608500099C166 /* RegexKitLite.m in Sources */,
+				5EA7837215E608500099C166 /* RKLMatchEnumerator.m in Sources */,
+				5EA7837515E608960099C166 /* IFTweetLabel.m in Sources */,
+				5E01300115E60A210070BF05 /* FTAnimation+UIView.m in Sources */,
+				5E01300215E60A210070BF05 /* FTAnimationManager.m in Sources */,
+				5E01300315E60A210070BF05 /* FTUtils+NSObject.m in Sources */,
+				5E01303915E624A30070BF05 /* SystemInitialize.m in Sources */,
+				5E01304115E626EF0070BF05 /* ChapterPO.m in Sources */,
+				5E01307215E635070070BF05 /* coreData.xcdatamodeld in Sources */,
+				5E01307615E637220070BF05 /* SUBJECT.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +788,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5E01307015E635070070BF05 /* coreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5E01307115E635070070BF05 /* coreData.xcdatamodel */,
+			);
+			currentVersion = 5E01307115E635070070BF05 /* coreData.xcdatamodel */;
+			name = coreData.xcdatamodeld;
+			path = model/coreData/coreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DFD6DA1D15E5160A00A7A6E7 /* Project object */;
 }

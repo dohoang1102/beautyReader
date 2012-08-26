@@ -26,12 +26,12 @@
 
 @synthesize linksEnabled;
 
+@synthesize expressions;
+
 
 NSString *IFTweetLabelURLNotification = @"IFTweetLabelURLNotification";
 
-
-static NSArray *expressions = nil;
-
+/*
 + (void)initialize
 {
 	// setup regular expressions that define where buttons will be created
@@ -41,6 +41,7 @@ static NSArray *expressions = nil;
 			@"([hH][tT][tT][pP][sS]?:\\/\\/[^ ,'\">\\]\\)]*[^\\. ,'\">\\]\\)])", // hyperlinks
 			nil];
 }
+ */
 
 - (void)handleButton:(id)sender
 {
@@ -69,13 +70,6 @@ static NSArray *expressions = nil;
 
 - (void)createButtonWithText:(NSString *)text withFrame:(CGRect)frame
 {
-    NSLog(@"=========");
-    /*
-    UILabel *button = [[UILabel alloc] initWithFrame:frame];
-    button.userInteractionEnabled = YES;
-    button.backgroundColor = [UIColor clearColor];
-    */
-    
 	UIButton *button = nil;
 	if (self.normalImage && self.highlightImage)
 	{

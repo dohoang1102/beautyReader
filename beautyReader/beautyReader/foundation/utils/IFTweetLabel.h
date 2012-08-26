@@ -29,6 +29,8 @@ extern NSString *IFTweetLabelURLNotification;
 	UILabel *label;
 	
 	BOOL linksEnabled;
+    
+    NSArray *expressions;
 }
 
 @property (nonatomic, retain) UIColor *normalColor;
@@ -40,6 +42,7 @@ extern NSString *IFTweetLabelURLNotification;
 @property (nonatomic, retain) UILabel *label;
 
 @property (nonatomic, assign) BOOL linksEnabled;
+@property (nonatomic, retain) NSArray *expressions;
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor;
 - (void)setFrame:(CGRect)frame;

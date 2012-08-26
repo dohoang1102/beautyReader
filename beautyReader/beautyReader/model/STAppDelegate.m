@@ -7,8 +7,9 @@
 //
 
 #import "STAppDelegate.h"
-
 #import "MainViewController.h"
+#import "CoreDataFactory.h"
+#import "CHAPTER.h"
 
 @implementation STAppDelegate
 
@@ -25,12 +26,49 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window.backgroundColor = [UIColor whiteColor];
     // Override point for customization after application launch.
-    MainViewController *rootViewCtrl = [[MainViewController alloc] init];
+    MainViewController *rootViewCtrl = [[[MainViewController alloc] init] autorelease];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewCtrl];
-    self.navigationController.navigationBarHidden = YES;
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+
+    FileUtils *fileUtil = [FileUtils sharedFileUtils];
+    //首次加载
+    NSString *firstVisit = [fileUtil getUserDefaultsForKey:FIRST_INSTALL];
+    if (![@"1" isEqualToString:firstVisit]) {//first open app
+        //数据库文件移动到DOCUMENTS文件夹
+        NSError *error;
+        NSString *filePath = [fileUtil getAppFilePath:@"sql" suffix:@"sqlite"];
+        NSString *documentPath = [fileUtil getFilePath:@"sql.sqlite"];
+        NSLog(@"%@",documentPath);
+        if ([[NSFileManager defaultManager] fileExistsAtPath:documentPath]) {
+            [[NSFileManager defaultManager] removeItemAtURL:[NSURL fileURLWithPath:documentPath] error:&error];
+        }
+        BOOL moveFlag;
+        moveFlag = [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:documentPath error:&error];
+        if(moveFlag) {
+            [fileUtil setUserDefaults:@"1" key:FIRST_INSTALL];
+            DBLog(@"---> %@",@"数据库文件初始化成功!");
+        }
+    }
+    
+    //测试文件查询
+    CoreDataFactory *factory = [CoreDataFactory sharedInstance];
+    NSManagedObjectContext *context = [factory managedObjectContext];
+    NSFetchRequest *request = [[[NSFetchRequest alloc] initWithEntityName:@"CHAPTER"] autorelease];
+    NSError *err = nil;
+    NSArray *retArra = [context executeFetchRequest:request error:&err];
+    if (err!=nil) {
+        NSLog(@"%@",err);
+    }
+    NSLog(@"--------%d",[retArra count]);
+    for (CHAPTER *chapter in retArra) {
+        NSString *str = [[NSString alloc] initWithData:chapter.chapterEnZh encoding:NSUTF8StringEncoding];
+        NSLog(@"..........%d,%@",[chapter.chapterId intValue],chapter.subject);
+//        DBLog(@"...... %@",str);
+    }
+     
     return YES;
 }
 

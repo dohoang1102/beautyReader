@@ -10,4 +10,7 @@
 
 @interface MainViewController : UIViewController
 
+//进入一级菜单
+-(void) showFiestLevelMenu:(int) subjectType;
+
 @end

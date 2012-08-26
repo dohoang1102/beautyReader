@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface ChapterPO : NSObject {
     NSString *chapterName;//章节名
@@ -37,5 +38,7 @@
 @property (nonatomic,retain) NSString *comment;//注释
 
 +(ChapterPO*) parseChapter:(NSDictionary*)dictionary;
+
+-(void) saveChapterPO:(NSManagedObjectContext*)context withId:(int)chapterId;
 
 @end

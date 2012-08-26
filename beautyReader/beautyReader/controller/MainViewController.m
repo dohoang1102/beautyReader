@@ -7,6 +7,9 @@
 //
 
 #import "MainViewController.h"
+#import "MainView.h"
+#import "FirstLevelMenuController.h"
+#import "SubjectService.h"
 
 @interface MainViewController ()
 
@@ -26,8 +29,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    MainView *mainView = [[[MainView alloc] initWithFrame:self.view.frame] autorelease];
+    mainView.controller = self;
+    self.view = mainView;
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidUnload
@@ -39,6 +47,17 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+//进入一级菜单
+-(void) showFiestLevelMenu:(int) subjectType {
+    //查询一级菜单内容
+    SubjectService *service = [[[SubjectService alloc] init] autorelease];
+    FirstLevelMenuController *firstLevelCtrl = [[FirstLevelMenuController alloc] init];
+    firstLevelCtrl.subjectType = subjectType;
+    firstLevelCtrl.dataSourceArray = [service querySubjectByType:subjectType];
+    [self.navigationController pushViewController:firstLevelCtrl animated:YES];
+    [firstLevelCtrl release];
 }
 
 @end

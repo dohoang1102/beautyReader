@@ -33,11 +33,26 @@
 		5E01306A15E62FDB0070BF05 /* 01原文.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306115E62FDB0070BF05 /* 01原文.txt */; };
 		5E01306B15E62FDB0070BF05 /* 01原文.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306115E62FDB0070BF05 /* 01原文.txt */; };
 		5E01307215E635070070BF05 /* coreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E01307015E635070070BF05 /* coreData.xcdatamodeld */; };
-		5E01307615E637220070BF05 /* SUBJECT.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E01307515E637220070BF05 /* SUBJECT.m */; };
 		5EA7837115E608500099C166 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7836E15E608500099C166 /* RegexKitLite.m */; };
 		5EA7837215E608500099C166 /* RKLMatchEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7837015E608500099C166 /* RKLMatchEnumerator.m */; };
 		5EA7837515E608960099C166 /* IFTweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7837415E608960099C166 /* IFTweetLabel.m */; };
 		5EA7837715E608B10099C166 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7837615E608B10099C166 /* libicucore.A.dylib */; };
+		DFC5DE7615EA009200DCE9BE /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE7515EA009200DCE9BE /* MainView.m */; };
+		DFC5DE7915EA122800DCE9BE /* FirstLevelMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE7815EA122800DCE9BE /* FirstLevelMenuController.m */; };
+		DFC5DE7C15EA142A00DCE9BE /* FirstLevelMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE7B15EA142A00DCE9BE /* FirstLevelMenuView.m */; };
+		DFC5DE8015EA16AA00DCE9BE /* SubjectService.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE7F15EA16AA00DCE9BE /* SubjectService.m */; };
+		DFC5DE8415EA1C2300DCE9BE /* FirstLevelMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE8315EA1C2300DCE9BE /* FirstLevelMenuCell.m */; };
+		DFC5DE8E15EA2DB300DCE9BE /* WORD.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE8D15EA2DB200DCE9BE /* WORD.m */; };
+		DFC5DE9115EA2DB500DCE9BE /* SUBJECT.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE9015EA2DB400DCE9BE /* SUBJECT.m */; };
+		DFC5DE9415EA2DBA00DCE9BE /* SENTENCE.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE9315EA2DB800DCE9BE /* SENTENCE.m */; };
+		DFC5DE9715EA2DBE00DCE9BE /* CHAPTER.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE9615EA2DBC00DCE9BE /* CHAPTER.m */; };
+		DFC5DE9A15EA2DCE00DCE9BE /* GAME.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE9915EA2DCB00DCE9BE /* GAME.m */; };
+		DFC5DEA315EA327C00DCE9BE /* sql.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DFC5DEA215EA327C00DCE9BE /* sql.sqlite */; };
+		DFC5DEA615EA35E100DCE9BE /* SecondLevelMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DEA515EA35E100DCE9BE /* SecondLevelMenuController.m */; };
+		DFC5DEA915EA360100DCE9BE /* SecondLevelMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DEA815EA360000DCE9BE /* SecondLevelMenuView.m */; };
+		DFC5DEAC15EA37CE00DCE9BE /* SecondLevelMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DEAB15EA37CE00DCE9BE /* SecondLevelMenuCell.m */; };
+		DFC5DEAF15EA3D2A00DCE9BE /* ChapterService.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DEAE15EA3D2A00DCE9BE /* ChapterService.m */; };
+		DFC5DEB615EA62BA00DCE9BE /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DEB515EA62BA00DCE9BE /* ReadViewController.m */; };
 		DFD6DA2B15E5160B00A7A6E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2A15E5160B00A7A6E7 /* UIKit.framework */; };
 		DFD6DA2D15E5160B00A7A6E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2C15E5160B00A7A6E7 /* Foundation.framework */; };
 		DFD6DA2F15E5160B00A7A6E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2E15E5160B00A7A6E7 /* CoreGraphics.framework */; };
@@ -107,8 +122,6 @@
 		5E01306015E62FDB0070BF05 /* 01英汉.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01英汉.txt"; path = "resources/01英汉.txt"; sourceTree = "<group>"; };
 		5E01306115E62FDB0070BF05 /* 01原文.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01原文.txt"; path = "resources/01原文.txt"; sourceTree = "<group>"; };
 		5E01307115E635070070BF05 /* coreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreData.xcdatamodel; sourceTree = "<group>"; };
-		5E01307415E637220070BF05 /* SUBJECT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUBJECT.h; path = model/coreData/SUBJECT.h; sourceTree = "<group>"; };
-		5E01307515E637220070BF05 /* SUBJECT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUBJECT.m; path = model/coreData/SUBJECT.m; sourceTree = "<group>"; };
 		5EA7836D15E608500099C166 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = foundation/RegexKitLite/RegexKitLite.h; sourceTree = "<group>"; };
 		5EA7836E15E608500099C166 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = foundation/RegexKitLite/RegexKitLite.m; sourceTree = "<group>"; };
 		5EA7836F15E608500099C166 /* RKLMatchEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKLMatchEnumerator.h; path = foundation/RegexKitLite/RKLMatchEnumerator.h; sourceTree = "<group>"; };
@@ -116,6 +129,37 @@
 		5EA7837315E608960099C166 /* IFTweetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFTweetLabel.h; path = foundation/utils/IFTweetLabel.h; sourceTree = "<group>"; };
 		5EA7837415E608960099C166 /* IFTweetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFTweetLabel.m; path = foundation/utils/IFTweetLabel.m; sourceTree = "<group>"; };
 		5EA7837615E608B10099C166 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = usr/lib/libicucore.A.dylib; sourceTree = SDKROOT; };
+		DFC5DE7415EA009200DCE9BE /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = view/MainView.h; sourceTree = "<group>"; };
+		DFC5DE7515EA009200DCE9BE /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = view/MainView.m; sourceTree = "<group>"; };
+		DFC5DE7715EA122800DCE9BE /* FirstLevelMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstLevelMenuController.h; path = controller/FirstLevelMenuController.h; sourceTree = "<group>"; };
+		DFC5DE7815EA122800DCE9BE /* FirstLevelMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstLevelMenuController.m; path = controller/FirstLevelMenuController.m; sourceTree = "<group>"; };
+		DFC5DE7A15EA142A00DCE9BE /* FirstLevelMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstLevelMenuView.h; path = view/FirstLevelMenuView.h; sourceTree = "<group>"; };
+		DFC5DE7B15EA142A00DCE9BE /* FirstLevelMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstLevelMenuView.m; path = view/FirstLevelMenuView.m; sourceTree = "<group>"; };
+		DFC5DE7E15EA16AA00DCE9BE /* SubjectService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubjectService.h; path = model/service/SubjectService.h; sourceTree = "<group>"; };
+		DFC5DE7F15EA16AA00DCE9BE /* SubjectService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubjectService.m; path = model/service/SubjectService.m; sourceTree = "<group>"; };
+		DFC5DE8215EA1C2300DCE9BE /* FirstLevelMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstLevelMenuCell.h; path = view/FirstLevelMenuCell.h; sourceTree = "<group>"; };
+		DFC5DE8315EA1C2300DCE9BE /* FirstLevelMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstLevelMenuCell.m; path = view/FirstLevelMenuCell.m; sourceTree = "<group>"; };
+		DFC5DE8C15EA2DB200DCE9BE /* WORD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WORD.h; path = model/coreData/WORD.h; sourceTree = "<group>"; };
+		DFC5DE8D15EA2DB200DCE9BE /* WORD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WORD.m; path = model/coreData/WORD.m; sourceTree = "<group>"; };
+		DFC5DE8F15EA2DB300DCE9BE /* SUBJECT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SUBJECT.h; path = model/coreData/SUBJECT.h; sourceTree = "<group>"; };
+		DFC5DE9015EA2DB400DCE9BE /* SUBJECT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SUBJECT.m; path = model/coreData/SUBJECT.m; sourceTree = "<group>"; };
+		DFC5DE9215EA2DB600DCE9BE /* SENTENCE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SENTENCE.h; path = model/coreData/SENTENCE.h; sourceTree = "<group>"; };
+		DFC5DE9315EA2DB800DCE9BE /* SENTENCE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SENTENCE.m; path = model/coreData/SENTENCE.m; sourceTree = "<group>"; };
+		DFC5DE9515EA2DBA00DCE9BE /* CHAPTER.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHAPTER.h; path = model/coreData/CHAPTER.h; sourceTree = "<group>"; };
+		DFC5DE9615EA2DBC00DCE9BE /* CHAPTER.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHAPTER.m; path = model/coreData/CHAPTER.m; sourceTree = "<group>"; };
+		DFC5DE9815EA2DBF00DCE9BE /* GAME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAME.h; path = model/coreData/GAME.h; sourceTree = "<group>"; };
+		DFC5DE9915EA2DCB00DCE9BE /* GAME.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GAME.m; path = model/coreData/GAME.m; sourceTree = "<group>"; };
+		DFC5DEA215EA327C00DCE9BE /* sql.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = sql.sqlite; path = model/coreData/sql.sqlite; sourceTree = "<group>"; };
+		DFC5DEA415EA35E100DCE9BE /* SecondLevelMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondLevelMenuController.h; path = controller/SecondLevelMenuController.h; sourceTree = "<group>"; };
+		DFC5DEA515EA35E100DCE9BE /* SecondLevelMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondLevelMenuController.m; path = controller/SecondLevelMenuController.m; sourceTree = "<group>"; };
+		DFC5DEA715EA360000DCE9BE /* SecondLevelMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondLevelMenuView.h; path = view/SecondLevelMenuView.h; sourceTree = "<group>"; };
+		DFC5DEA815EA360000DCE9BE /* SecondLevelMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondLevelMenuView.m; path = view/SecondLevelMenuView.m; sourceTree = "<group>"; };
+		DFC5DEAA15EA37CE00DCE9BE /* SecondLevelMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondLevelMenuCell.h; path = view/SecondLevelMenuCell.h; sourceTree = "<group>"; };
+		DFC5DEAB15EA37CE00DCE9BE /* SecondLevelMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondLevelMenuCell.m; path = view/SecondLevelMenuCell.m; sourceTree = "<group>"; };
+		DFC5DEAD15EA3D2A00DCE9BE /* ChapterService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChapterService.h; path = model/service/ChapterService.h; sourceTree = "<group>"; };
+		DFC5DEAE15EA3D2A00DCE9BE /* ChapterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChapterService.m; path = model/service/ChapterService.m; sourceTree = "<group>"; };
+		DFC5DEB415EA62BA00DCE9BE /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadViewController.h; path = controller/ReadViewController.h; sourceTree = "<group>"; };
+		DFC5DEB515EA62BA00DCE9BE /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadViewController.m; path = controller/ReadViewController.m; sourceTree = "<group>"; };
 		DFD6DA2615E5160B00A7A6E7 /* beautyReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beautyReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD6DA2A15E5160B00A7A6E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFD6DA2C15E5160B00A7A6E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -276,6 +320,28 @@
 			name = RegexKitLite;
 			sourceTree = "<group>";
 		};
+		DFC5DE7D15EA167A00DCE9BE /* service */ = {
+			isa = PBXGroup;
+			children = (
+				DFC5DE7E15EA16AA00DCE9BE /* SubjectService.h */,
+				DFC5DE7F15EA16AA00DCE9BE /* SubjectService.m */,
+				DFC5DEAD15EA3D2A00DCE9BE /* ChapterService.h */,
+				DFC5DEAE15EA3D2A00DCE9BE /* ChapterService.m */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
+		DFC5DE8115EA1BF900DCE9BE /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				DFC5DE8215EA1C2300DCE9BE /* FirstLevelMenuCell.h */,
+				DFC5DE8315EA1C2300DCE9BE /* FirstLevelMenuCell.m */,
+				DFC5DEAA15EA37CE00DCE9BE /* SecondLevelMenuCell.h */,
+				DFC5DEAB15EA37CE00DCE9BE /* SecondLevelMenuCell.m */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		DFD6DA1B15E5160A00A7A6E7 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +425,7 @@
 		DFEB65EC15E5358C00BD53A5 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				DFC5DE7D15EA167A00DCE9BE /* service */,
 				5E01303E15E626A60070BF05 /* PO */,
 				DFEB663015E5397200BD53A5 /* coreData */,
 				DFEB65F315E536D300BD53A5 /* STAppDelegate.h */,
@@ -370,6 +437,13 @@
 		DFEB65EE15E535A800BD53A5 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				DFC5DE8115EA1BF900DCE9BE /* cell */,
+				DFC5DE7415EA009200DCE9BE /* MainView.h */,
+				DFC5DE7515EA009200DCE9BE /* MainView.m */,
+				DFC5DE7A15EA142A00DCE9BE /* FirstLevelMenuView.h */,
+				DFC5DE7B15EA142A00DCE9BE /* FirstLevelMenuView.m */,
+				DFC5DEA715EA360000DCE9BE /* SecondLevelMenuView.h */,
+				DFC5DEA815EA360000DCE9BE /* SecondLevelMenuView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -379,6 +453,12 @@
 			children = (
 				DFEB65F015E5369C00BD53A5 /* MainViewController.h */,
 				DFEB65F115E5369C00BD53A5 /* MainViewController.m */,
+				DFC5DE7715EA122800DCE9BE /* FirstLevelMenuController.h */,
+				DFC5DE7815EA122800DCE9BE /* FirstLevelMenuController.m */,
+				DFC5DEA415EA35E100DCE9BE /* SecondLevelMenuController.h */,
+				DFC5DEA515EA35E100DCE9BE /* SecondLevelMenuController.m */,
+				DFC5DEB415EA62BA00DCE9BE /* ReadViewController.h */,
+				DFC5DEB515EA62BA00DCE9BE /* ReadViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -437,11 +517,20 @@
 		DFEB663015E5397200BD53A5 /* coreData */ = {
 			isa = PBXGroup;
 			children = (
-				5E01307415E637220070BF05 /* SUBJECT.h */,
-				5E01307515E637220070BF05 /* SUBJECT.m */,
+				DFC5DEA215EA327C00DCE9BE /* sql.sqlite */,
 				DFEB663115E539BD00BD53A5 /* CoreDataFactory.h */,
 				DFEB663215E539BD00BD53A5 /* CoreDataFactory.m */,
 				5E01307015E635070070BF05 /* coreData.xcdatamodeld */,
+				DFC5DE9815EA2DBF00DCE9BE /* GAME.h */,
+				DFC5DE9915EA2DCB00DCE9BE /* GAME.m */,
+				DFC5DE9515EA2DBA00DCE9BE /* CHAPTER.h */,
+				DFC5DE9615EA2DBC00DCE9BE /* CHAPTER.m */,
+				DFC5DE9215EA2DB600DCE9BE /* SENTENCE.h */,
+				DFC5DE9315EA2DB800DCE9BE /* SENTENCE.m */,
+				DFC5DE8F15EA2DB300DCE9BE /* SUBJECT.h */,
+				DFC5DE9015EA2DB400DCE9BE /* SUBJECT.m */,
+				DFC5DE8C15EA2DB200DCE9BE /* WORD.h */,
+				DFC5DE8D15EA2DB200DCE9BE /* WORD.m */,
 			);
 			name = coreData;
 			sourceTree = "<group>";
@@ -541,6 +630,7 @@
 				5E01306615E62FDB0070BF05 /* 01句子.txt in Resources */,
 				5E01306815E62FDB0070BF05 /* 01英汉.txt in Resources */,
 				5E01306A15E62FDB0070BF05 /* 01原文.txt in Resources */,
+				DFC5DEA315EA327C00DCE9BE /* sql.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +704,21 @@
 				5E01303915E624A30070BF05 /* SystemInitialize.m in Sources */,
 				5E01304115E626EF0070BF05 /* ChapterPO.m in Sources */,
 				5E01307215E635070070BF05 /* coreData.xcdatamodeld in Sources */,
-				5E01307615E637220070BF05 /* SUBJECT.m in Sources */,
+				DFC5DE7615EA009200DCE9BE /* MainView.m in Sources */,
+				DFC5DE7915EA122800DCE9BE /* FirstLevelMenuController.m in Sources */,
+				DFC5DE7C15EA142A00DCE9BE /* FirstLevelMenuView.m in Sources */,
+				DFC5DE8015EA16AA00DCE9BE /* SubjectService.m in Sources */,
+				DFC5DE8415EA1C2300DCE9BE /* FirstLevelMenuCell.m in Sources */,
+				DFC5DE8E15EA2DB300DCE9BE /* WORD.m in Sources */,
+				DFC5DE9115EA2DB500DCE9BE /* SUBJECT.m in Sources */,
+				DFC5DE9415EA2DBA00DCE9BE /* SENTENCE.m in Sources */,
+				DFC5DE9715EA2DBE00DCE9BE /* CHAPTER.m in Sources */,
+				DFC5DE9A15EA2DCE00DCE9BE /* GAME.m in Sources */,
+				DFC5DEA615EA35E100DCE9BE /* SecondLevelMenuController.m in Sources */,
+				DFC5DEA915EA360100DCE9BE /* SecondLevelMenuView.m in Sources */,
+				DFC5DEAC15EA37CE00DCE9BE /* SecondLevelMenuCell.m in Sources */,
+				DFC5DEAF15EA3D2A00DCE9BE /* ChapterService.m in Sources */,
+				DFC5DEB615EA62BA00DCE9BE /* ReadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,7 @@
         <chapterName>Day 1</chapterName><!--章节名称-->
         <title_en>Career Tips How to Start a New Career</title_en><!--章节介绍,英文-->
         <title_zh>职场贴士：如何开始一个新职业</title_zh><!--章节介绍,中文-->
-        <subject>求职贴士</subject><!-- 所属二级标题-->
+        <subject>幸福点滴篇</subject><!-- 所属二级标题-->
         <chapterAudioUrl>01</chapterAudioUrl><!--文章音频文件地址-->
         <chapter_en>01原文</chapter_en><!--章节英文文本文件-->
         <chapter_zh>01翻译</chapter_zh><!--章节翻译文本文件-->
@@ -17,49 +17,49 @@
         <chapterName>Day 1</chapterName><!--章节名称-->
         <title_en>Career Tips How to Start a New Career</title_en><!--章节介绍,英文-->
         <title_zh>职场贴士：如何开始一个新职业</title_zh><!--章节介绍,中文-->
-        <subject>求职贴士</subject><!-- 所属二级标题-->
+        <subject>幸福点滴篇</subject><!-- 所属二级标题-->
         <chapterAudioUrl>01</chapterAudioUrl><!--文章音频文件地址-->
         <chapter_en>01原文</chapter_en><!--章节英文文本文件-->
         <chapter_zh>01翻译</chapter_zh><!--章节翻译文本文件-->
         <chapter_en_zh>01英汉</chapter_en_zh><!--英汉互译翻译文本文件-->
         <chapter_sentence>01句子</chapter_sentence><!--妙语文本文件-->
         <chapter_words>01词汇</chapter_words><!--重点词汇-->
-        <sequence>1</sequence><!--教程显示顺序-->
+        <sequence>2</sequence><!--教程显示顺序-->
     </chapter><chapter>
         <chapterName>Day 1</chapterName><!--章节名称-->
         <title_en>Career Tips How to Start a New Career</title_en><!--章节介绍,英文-->
         <title_zh>职场贴士：如何开始一个新职业</title_zh><!--章节介绍,中文-->
-        <subject>求职贴士</subject><!-- 所属二级标题-->
+        <subject>幸福点滴篇</subject><!-- 所属二级标题-->
         <chapterAudioUrl>01</chapterAudioUrl><!--文章音频文件地址-->
         <chapter_en>01原文</chapter_en><!--章节英文文本文件-->
         <chapter_zh>01翻译</chapter_zh><!--章节翻译文本文件-->
         <chapter_en_zh>01英汉</chapter_en_zh><!--英汉互译翻译文本文件-->
         <chapter_sentence>01句子</chapter_sentence><!--妙语文本文件-->
         <chapter_words>01词汇</chapter_words><!--重点词汇-->
-        <sequence>1</sequence><!--教程显示顺序-->
+        <sequence>3</sequence><!--教程显示顺序-->
     </chapter><chapter>
         <chapterName>Day 1</chapterName><!--章节名称-->
         <title_en>Career Tips How to Start a New Career</title_en><!--章节介绍,英文-->
         <title_zh>职场贴士：如何开始一个新职业</title_zh><!--章节介绍,中文-->
-        <subject>求职贴士</subject><!-- 所属二级标题-->
+        <subject>幸福点滴篇</subject><!-- 所属二级标题-->
         <chapterAudioUrl>01</chapterAudioUrl><!--文章音频文件地址-->
         <chapter_en>01原文</chapter_en><!--章节英文文本文件-->
         <chapter_zh>01翻译</chapter_zh><!--章节翻译文本文件-->
         <chapter_en_zh>01英汉</chapter_en_zh><!--英汉互译翻译文本文件-->
         <chapter_sentence>01句子</chapter_sentence><!--妙语文本文件-->
         <chapter_words>01词汇</chapter_words><!--重点词汇-->
-        <sequence>1</sequence><!--教程显示顺序-->
+        <sequence>4</sequence><!--教程显示顺序-->
     </chapter><chapter>
         <chapterName>Day 1</chapterName><!--章节名称-->
         <title_en>Career Tips How to Start a New Career</title_en><!--章节介绍,英文-->
         <title_zh>职场贴士：如何开始一个新职业</title_zh><!--章节介绍,中文-->
-        <subject>求职贴士</subject><!-- 所属二级标题-->
+        <subject>幸福点滴篇</subject><!-- 所属二级标题-->
         <chapterAudioUrl>01</chapterAudioUrl><!--文章音频文件地址-->
         <chapter_en>01原文</chapter_en><!--章节英文文本文件-->
         <chapter_zh>01翻译</chapter_zh><!--章节翻译文本文件-->
         <chapter_en_zh>01英汉</chapter_en_zh><!--英汉互译翻译文本文件-->
         <chapter_sentence>01句子</chapter_sentence><!--妙语文本文件-->
         <chapter_words>01词汇</chapter_words><!--重点词汇-->
-        <sequence>1</sequence><!--教程显示顺序-->
+        <sequence>5</sequence><!--教程显示顺序-->
     </chapter>
 </chapters>

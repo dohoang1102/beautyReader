@@ -1,12 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50d" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CHAPTER" representedClassName="CHAPTER" syncable="YES">
+        <attribute name="chapterAudioUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chapterEn" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="chapterEnZh" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="chapterId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="chapterName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chapterZh" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="createTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="free" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sequence" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleEn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleZh" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="games" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GAME" inverseName="chapter_g" inverseEntity="GAME" syncable="YES"/>
+        <relationship name="sentences" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SENTENCE" inverseName="chapter_s" inverseEntity="SENTENCE" syncable="YES"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WORD" inverseName="chapter_w" inverseEntity="WORD" syncable="YES"/>
+    </entity>
+    <entity name="GAME" representedClassName="GAME" syncable="YES">
+        <attribute name="chapterId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="chapter_g" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CHAPTER" inverseName="games" inverseEntity="CHAPTER" syncable="YES"/>
+    </entity>
+    <entity name="SENTENCE" representedClassName="SENTENCE" syncable="YES">
+        <attribute name="chapterId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="majorSentence" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="opTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sentenceId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="translate" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chapter_s" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CHAPTER" inverseName="sentences" inverseEntity="CHAPTER" syncable="YES"/>
+    </entity>
     <entity name="SUBJECT" representedClassName="SUBJECT" syncable="YES">
         <attribute name="sequence" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="subjectInfo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subjectName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subjectTranslation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subjectType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="WORD" representedClassName="WORD" syncable="YES">
+        <attribute name="chapterId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="majorWord" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="opTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="wordId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="chapter_w" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CHAPTER" inverseName="words" inverseEntity="CHAPTER" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SUBJECT" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="CHAPTER" positionX="160" positionY="192" width="128" height="270"/>
+        <element name="GAME" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="SENTENCE" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="SUBJECT" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="WORD" positionX="160" positionY="192" width="128" height="135"/>
     </elements>
 </model>

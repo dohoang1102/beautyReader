@@ -32,7 +32,7 @@ static int seqence = 1;
     if (!parseSpring) {
         return NO;
     }
-    /*
+    
     //解析并初始化夏季篇文章
     BOOL parseSummer = [self parseChapters:@"summer"];
     if (!parseSummer) {
@@ -48,7 +48,7 @@ static int seqence = 1;
     if (!parseWinter) {
         return NO;
     }
-     */
+     
     return YES;
 }
 

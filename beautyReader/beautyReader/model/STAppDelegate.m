@@ -32,7 +32,7 @@
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewCtrl];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
-
+    
     FileUtils *fileUtil = [FileUtils sharedFileUtils];
     //首次加载
     NSString *firstVisit = [fileUtil getUserDefaultsForKey:FIRST_INSTALL];
@@ -62,11 +62,9 @@
     if (err!=nil) {
         NSLog(@"%@",err);
     }
-    NSLog(@"--------%d",[retArra count]);
     for (CHAPTER *chapter in retArra) {
         NSString *str = [[NSString alloc] initWithData:chapter.chapterEnZh encoding:NSUTF8StringEncoding];
-        NSLog(@"..........%d,%@",[chapter.chapterId intValue],chapter.subject);
-//        DBLog(@"...... %@",str);
+        DBLog(@"...... %@",str);
     }
      
     return YES;

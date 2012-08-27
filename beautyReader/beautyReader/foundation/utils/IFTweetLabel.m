@@ -30,19 +30,26 @@
 
 
 NSString *IFTweetLabelURLNotification = @"IFTweetLabelURLNotification";
+NSString *IFTWeetLabelLongTapNotification = @"IFTWeetLabelLongTapNotification";
+
+
+//static NSArray *expressions = nil;
 
 /*
 + (void)initialize
 {
 	// setup regular expressions that define where buttons will be created
 	expressions = [[NSArray alloc] initWithObjects:
+            @"well",
+            @"Stay",
 			@"(@([^>]*)\\s)", // screen names
 			@"(#([^>]*)#)", // hash tags
 			@"([hH][tT][tT][pP][sS]?:\\/\\/[^ ,'\">\\]\\)]*[^\\. ,'\">\\]\\)])", // hyperlinks
 			nil];
 }
- */
+*/
 
+//处理单击事件
 - (void)handleButton:(id)sender
 {
 	NSString *buttonTitle = [sender titleForState:UIControlStateNormal];
@@ -68,6 +75,13 @@ NSString *IFTweetLabelURLNotification = @"IFTweetLabelURLNotification";
 	}
 }
 
+//处理长按事件
+-(void) handleLongTapButton:(UILongPressGestureRecognizer*)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        DBLog(@"%@",@"长按事件触发....");
+    }
+}
+
 - (void)createButtonWithText:(NSString *)text withFrame:(CGRect)frame
 {
 	UIButton *button = nil;
@@ -87,14 +101,13 @@ NSString *IFTweetLabelURLNotification = @"IFTweetLabelURLNotification";
 	[button.titleLabel setLineBreakMode:[self.label lineBreakMode]];
 	[button setTitleColor:self.normalColor forState:UIControlStateNormal];
 	[button setTitleColor:self.highlightColor forState:UIControlStateHighlighted];
-    
+    //添加点击事件
 	[button addTarget:self action:@selector(handleButton:) forControlEvents:UIControlEventTouchUpInside];
-    /*
-    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(ddd:)];
-    gesture.minimumPressDuration = 1.5f;
+    //添加长按事件
+    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongTapButton:)];
+    gesture.minimumPressDuration = 1.0f;
     [button addGestureRecognizer:gesture];
     [gesture release];
-     */
 	[self addSubview:button];
      
 }
@@ -338,7 +351,7 @@ NSString *IFTweetLabelURLNotification = @"IFTweetLabelURLNotification";
 
 	self.normalImage = nil;
 	self.highlightImage = nil;
-	
+	[expressions release];
 	[self removeButtons];
 	
 	[super dealloc];

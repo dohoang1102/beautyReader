@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString *IFTweetLabelURLNotification;
+extern NSString *IFTweetLabelURLNotification;//单击触发通知
+extern NSString *IFTWeetLabelLongTapNotification;//长按触发通知
 
 // NOTE: Yeah, it would make more sense to subclass UILabel to do this. But all the
 // the UIButtons that got placed on top of the UILabel were not tappable. No amount of
@@ -42,7 +43,8 @@ extern NSString *IFTweetLabelURLNotification;
 @property (nonatomic, retain) UILabel *label;
 
 @property (nonatomic, assign) BOOL linksEnabled;
-@property (nonatomic, retain) NSArray *expressions;
+
+@property (nonatomic,retain) NSArray *expressions;
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor;
 - (void)setFrame:(CGRect)frame;

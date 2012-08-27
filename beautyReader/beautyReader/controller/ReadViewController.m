@@ -57,6 +57,7 @@
     //计算文本高度
     NSString *content = [[NSString alloc] initWithData:chapter.chapterEn encoding:NSUTF8StringEncoding];
     CGSize contentSize = [content sizeWithFont:kCotentFont constrainedToSize:CGSizeMake(self.view.frame.size.width, 10000) lineBreakMode:UILineBreakModeWordWrap];
+    content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\n"];
     
     //添加scrollview
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -70,15 +71,14 @@
     ChapterService *service = [[[ChapterService alloc] init] autorelease];
     wordsArray = [[service queryWordsWithChapter:self.chapter] retain];
     //解析重点词汇
-    [self seperatorWords];
-    contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(5, 0, scrollView.frame.size.width-10, scrollView.contentSize.height-60)];
+    contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(0, 0, scrollView.frame.size.width, contentSize.height)];
     contentLabel.text = content;
     [contentLabel setNumberOfLines:0];
+    [contentLabel setExpressions:[self seperatorWords]];
     [contentLabel setFont:kCotentFont];
     [contentLabel setLinksEnabled:YES];
     [scrollView addSubview:contentLabel];
     [contentLabel release];
-    
 }
 
 -(void) showFavorite {
@@ -109,12 +109,9 @@
     if (!wordsArray) {
         return array;
     }
-    NSLog(@"....%d",[wordsArray count]);
     for (WORD *word in wordsArray) {
-        NSLog(@"--->%d  %@",[word.wordId intValue],word.content);
         NSArray *wordConArr = [word.content componentsSeparatedByString:@"|"];
         if (wordConArr && [wordConArr count] > 0) {
-            NSLog(@".........%@",[wordConArr objectAtIndex:0]);
             [array addObject:[wordConArr objectAtIndex:0]];
         }
     }

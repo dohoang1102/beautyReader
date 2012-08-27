@@ -52,7 +52,7 @@
             DBLog(@"---> %@",@"数据库文件初始化成功!");
         }
     }
-    
+    /*
     //测试文件查询
     CoreDataFactory *factory = [CoreDataFactory sharedInstance];
     NSManagedObjectContext *context = [factory managedObjectContext];
@@ -66,7 +66,7 @@
         NSString *str = [[NSString alloc] initWithData:chapter.chapterEnZh encoding:NSUTF8StringEncoding];
         DBLog(@"...... %@",str);
     }
-     
+     */
     return YES;
 }
 

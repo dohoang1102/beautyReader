@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define kCotentFont [UIFont systemFontOfSize:15.0f]
+#define kCotentFont [UIFont systemFontOfSize:17.0f]
 @class CHAPTER;
 @class IFTweetLabel;
 @interface ReadViewController : UIViewController {

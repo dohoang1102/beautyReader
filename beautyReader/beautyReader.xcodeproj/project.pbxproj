@@ -33,6 +33,7 @@
 		5E01306A15E62FDB0070BF05 /* 01原文.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306115E62FDB0070BF05 /* 01原文.txt */; };
 		5E01306B15E62FDB0070BF05 /* 01原文.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306115E62FDB0070BF05 /* 01原文.txt */; };
 		5E01307215E635070070BF05 /* coreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E01307015E635070070BF05 /* coreData.xcdatamodeld */; };
+		5E98EF1B15EB7724002AACCC /* ReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98EF1A15EB7724002AACCC /* ReaderView.m */; };
 		5EA7837115E608500099C166 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7836E15E608500099C166 /* RegexKitLite.m */; };
 		5EA7837215E608500099C166 /* RKLMatchEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7837015E608500099C166 /* RKLMatchEnumerator.m */; };
 		5EA7837515E608960099C166 /* IFTweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7837415E608960099C166 /* IFTweetLabel.m */; };
@@ -122,6 +123,8 @@
 		5E01306015E62FDB0070BF05 /* 01英汉.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01英汉.txt"; path = "resources/01英汉.txt"; sourceTree = "<group>"; };
 		5E01306115E62FDB0070BF05 /* 01原文.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01原文.txt"; path = "resources/01原文.txt"; sourceTree = "<group>"; };
 		5E01307115E635070070BF05 /* coreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreData.xcdatamodel; sourceTree = "<group>"; };
+		5E98EF1915EB7724002AACCC /* ReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderView.h; path = view/ReaderView.h; sourceTree = "<group>"; };
+		5E98EF1A15EB7724002AACCC /* ReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReaderView.m; path = view/ReaderView.m; sourceTree = "<group>"; };
 		5EA7836D15E608500099C166 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = foundation/RegexKitLite/RegexKitLite.h; sourceTree = "<group>"; };
 		5EA7836E15E608500099C166 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = foundation/RegexKitLite/RegexKitLite.m; sourceTree = "<group>"; };
 		5EA7836F15E608500099C166 /* RKLMatchEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKLMatchEnumerator.h; path = foundation/RegexKitLite/RKLMatchEnumerator.h; sourceTree = "<group>"; };
@@ -444,6 +447,8 @@
 				DFC5DE7B15EA142A00DCE9BE /* FirstLevelMenuView.m */,
 				DFC5DEA715EA360000DCE9BE /* SecondLevelMenuView.h */,
 				DFC5DEA815EA360000DCE9BE /* SecondLevelMenuView.m */,
+				5E98EF1915EB7724002AACCC /* ReaderView.h */,
+				5E98EF1A15EB7724002AACCC /* ReaderView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -719,6 +724,7 @@
 				DFC5DEAC15EA37CE00DCE9BE /* SecondLevelMenuCell.m in Sources */,
 				DFC5DEAF15EA3D2A00DCE9BE /* ChapterService.m in Sources */,
 				DFC5DEB615EA62BA00DCE9BE /* ReadViewController.m in Sources */,
+				5E98EF1B15EB7724002AACCC /* ReaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

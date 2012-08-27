@@ -71,12 +71,17 @@
     ChapterService *service = [[[ChapterService alloc] init] autorelease];
     wordsArray = [[service queryWordsWithChapter:self.chapter] retain];
     //解析重点词汇
+<<<<<<< HEAD
     contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(0, 0, scrollView.frame.size.width, contentSize.height)];
+=======
+    contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(5, 0, scrollView.frame.size.width-10, scrollView.contentSize.height-60)];
+>>>>>>> sync
     contentLabel.text = content;
     [contentLabel setNumberOfLines:0];
     [contentLabel setExpressions:[self seperatorWords]];
     [contentLabel setFont:kCotentFont];
     [contentLabel setLinksEnabled:YES];
+    [contentLabel setExpressions:[NSArray arrayWithObject:@"all"]];
     [scrollView addSubview:contentLabel];
     [contentLabel release];
 }
@@ -109,12 +114,19 @@
     if (!wordsArray) {
         return array;
     }
+<<<<<<< HEAD
+=======
+    /*
+>>>>>>> sync
     for (WORD *word in wordsArray) {
         NSArray *wordConArr = [word.content componentsSeparatedByString:@"|"];
         if (wordConArr && [wordConArr count] > 0) {
             [array addObject:[wordConArr objectAtIndex:0]];
+            NSLog(@"-------> %@",[wordConArr objectAtIndex:0]);
         }
     }
+     */
+    [array addObject:@"timeframe"];
     return array;
 }
 

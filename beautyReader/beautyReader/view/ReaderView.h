@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayBar.h"
+
+#define kCotentFont [UIFont systemFontOfSize:17.0f]
 
 @class ReadViewController;
-@interface ReaderView : UIView {
-    
+@class IFTweetLabel;
+@interface ReaderView : UIView<UIGestureRecognizerDelegate,PlaBarDelegate> {
+    ReadViewController *controller;
+    UIScrollView *scrollView;
+    IFTweetLabel *contentLabel;
+    PlayBar *playBar;
 }
+
+@property (nonatomic,assign) ReadViewController *controller;
+@property (nonatomic,readonly) PlayBar *playBar;
 
 @end

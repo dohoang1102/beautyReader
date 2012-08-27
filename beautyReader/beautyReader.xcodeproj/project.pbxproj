@@ -64,6 +64,8 @@
 		DFD6DA4B15E5160B00A7A6E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2C15E5160B00A7A6E7 /* Foundation.framework */; };
 		DFD6DA5315E5160B00A7A6E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFD6DA5115E5160B00A7A6E7 /* InfoPlist.strings */; };
 		DFD6DA5615E5160B00A7A6E7 /* beautyReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD6DA5515E5160B00A7A6E7 /* beautyReaderTests.m */; };
+		DFDA4F2315EBB1FD00293526 /* PlayBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DFDA4F2215EBB1FD00293526 /* PlayBar.m */; };
+		DFDA4F2E15EBB9F500293526 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDA4F2D15EBB9F500293526 /* AVFoundation.framework */; };
 		DFEB65F215E5369C00BD53A5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB65F115E5369C00BD53A5 /* MainViewController.m */; };
 		DFEB65F515E536D300BD53A5 /* STAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB65F415E536D300BD53A5 /* STAppDelegate.m */; };
 		DFEB661E15E537F700BD53A5 /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEB65FE15E537F700BD53A5 /* CTidy.m */; };
@@ -177,6 +179,9 @@
 		DFD6DA5215E5160B00A7A6E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DFD6DA5415E5160B00A7A6E7 /* beautyReaderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = beautyReaderTests.h; sourceTree = "<group>"; };
 		DFD6DA5515E5160B00A7A6E7 /* beautyReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beautyReaderTests.m; sourceTree = "<group>"; };
+		DFDA4F2115EBB1FD00293526 /* PlayBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayBar.h; path = view/PlayBar.h; sourceTree = "<group>"; };
+		DFDA4F2215EBB1FD00293526 /* PlayBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayBar.m; path = view/PlayBar.m; sourceTree = "<group>"; };
+		DFDA4F2D15EBB9F500293526 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DFEB65F015E5369C00BD53A5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = controller/MainViewController.h; sourceTree = "<group>"; };
 		DFEB65F115E5369C00BD53A5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = controller/MainViewController.m; sourceTree = "<group>"; };
 		DFEB65F315E536D300BD53A5 /* STAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAppDelegate.h; path = model/STAppDelegate.h; sourceTree = "<group>"; };
@@ -227,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFDA4F2E15EBB9F500293526 /* AVFoundation.framework in Frameworks */,
 				5E01300515E60A400070BF05 /* QuartzCore.framework in Frameworks */,
 				5EA7837715E608B10099C166 /* libicucore.A.dylib in Frameworks */,
 				DFEB663915E53A6000BD53A5 /* CoreData.framework in Frameworks */,
@@ -369,6 +375,7 @@
 			children = (
 				5EA7837615E608B10099C166 /* libicucore.A.dylib */,
 				DFEB662E15E5388800BD53A5 /* libxml2.dylib */,
+				DFDA4F2D15EBB9F500293526 /* AVFoundation.framework */,
 				5E01300415E60A400070BF05 /* QuartzCore.framework */,
 				DFEB663815E53A6000BD53A5 /* CoreData.framework */,
 				DFD6DA2A15E5160B00A7A6E7 /* UIKit.framework */,
@@ -449,6 +456,8 @@
 				DFC5DEA815EA360000DCE9BE /* SecondLevelMenuView.m */,
 				5E98EF1915EB7724002AACCC /* ReaderView.h */,
 				5E98EF1A15EB7724002AACCC /* ReaderView.m */,
+				DFDA4F2115EBB1FD00293526 /* PlayBar.h */,
+				DFDA4F2215EBB1FD00293526 /* PlayBar.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -725,6 +734,7 @@
 				DFC5DEAF15EA3D2A00DCE9BE /* ChapterService.m in Sources */,
 				DFC5DEB615EA62BA00DCE9BE /* ReadViewController.m in Sources */,
 				5E98EF1B15EB7724002AACCC /* ReaderView.m in Sources */,
+				DFDA4F2315EBB1FD00293526 /* PlayBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

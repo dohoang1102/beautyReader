@@ -30,57 +30,7 @@
 
 
 NSString *IFTweetLabelURLNotification = @"IFTweetLabelURLNotification";
-NSString *IFTWeetLabelLongTapNotification = @"IFTWeetLabelLongTapNotification";
-
-
-//static NSArray *expressions = nil;
-
-/*
-+ (void)initialize
-{
-	// setup regular expressions that define where buttons will be created
-	expressions = [[NSArray alloc] initWithObjects:
-            @"well",
-            @"Stay",
-			@"(@([^>]*)\\s)", // screen names
-			@"(#([^>]*)#)", // hash tags
-			@"([hH][tT][tT][pP][sS]?:\\/\\/[^ ,'\">\\]\\)]*[^\\. ,'\">\\]\\)])", // hyperlinks
-			nil];
-}
-*/
-
-//处理单击事件
-- (void)handleButton:(id)sender
-{
-	NSString *buttonTitle = [sender titleForState:UIControlStateNormal];
-	//NSLog(@"IFTweetLabel: handleButton: sender = %@, title = %@", sender, buttonTitle);
-
-	NSString *text = self.label.text;
-
-	// NOTE: It's possible that the button title only includes the beginning of screen name or hyperlink.
-	// This code collects all possible links in the current label text and gets a full match that can be passed
-	// with the notification.
-	
-	for (NSString *expression in expressions)
-	{
-		NSString *match;
-		NSEnumerator *enumerator = [text matchEnumeratorWithRegex:expression];
-		while (match = [enumerator nextObject])
-		{
-			if ([match hasPrefix:buttonTitle])
-			{
-				[[NSNotificationCenter defaultCenter] postNotificationName:IFTweetLabelURLNotification object:match];
-			}
-		}
-	}
-}
-
-//处理长按事件
--(void) handleLongTapButton:(UILongPressGestureRecognizer*)gesture {
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        DBLog(@"%@",@"长按事件触发....");
-    }
-}
+NSString *IFTweetLabelLongTapNotification = @"IFTweetLabelLongTapNotification";
 
 - (void)createButtonWithText:(NSString *)text withFrame:(CGRect)frame
 {
@@ -131,7 +81,7 @@ NSString *IFTWeetLabelLongTapNotification = @"IFTWeetLabelLongTapNotification";
 			NSString *measureText = [text substringWithRange:measureRange];
 			CGSize measureSize = [measureText sizeWithFont:font];
 			
-			CGRect matchFrame = CGRectMake(measureSize.width - 3.0f, point.y, matchSize.width + 6.0f, matchSize.height);
+			CGRect matchFrame = CGRectMake(measureSize.width - 3.0f, point.y, matchSize.width + 5.0f, matchSize.height);
 			[self createButtonWithText:match withFrame:matchFrame];
 			
 			//NSLog(@"match = %@", match);
@@ -339,6 +289,12 @@ NSString *IFTWeetLabelLongTapNotification = @"IFTWeetLabelLongTapNotification";
 		[self addSubview:self.label];
 
 		self.linksEnabled = NO;
+        
+        //添加单击事件
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+        tapGesture.delegate = self;
+        [label addGestureRecognizer:tapGesture];
+        [tapGesture release];
     }
 	
     return self;
@@ -448,7 +404,6 @@ NSString *IFTWeetLabelLongTapNotification = @"IFTWeetLabelLongTapNotification";
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-	//NSLog(@"methodSignatureForSelector: selector = %@", NSStringFromSelector(aSelector));
 
 	NSMethodSignature* methodSignature = [super methodSignatureForSelector:aSelector];
 	if (methodSignature == nil)
@@ -462,8 +417,66 @@ NSString *IFTWeetLabelLongTapNotification = @"IFTWeetLabelLongTapNotification";
 - (BOOL)respondsToSelector:(SEL)aSelector
 {
 	//NSLog(@"respondsToSelector: selector = %@", NSStringFromSelector(aSelector));
-	
 	return [super respondsToSelector:aSelector] || [self.label respondsToSelector:aSelector];
+}
+
+#pragma mark tap gesture handller
+
+//处理重点单词单击事件
+- (void)handleButton:(id)sender
+{
+	NSString *buttonTitle = [sender titleForState:UIControlStateNormal];    
+	NSString *text = self.label.text;
+	for (NSString *expression in expressions)
+	{
+		NSString *match;
+		NSEnumerator *enumerator = [text matchEnumeratorWithRegex:expression];
+		while (match = [enumerator nextObject])
+		{
+			if ([match hasPrefix:buttonTitle])
+			{
+				[[NSNotificationCenter defaultCenter] postNotificationName:IFTweetLabelURLNotification object:match];
+			}
+		}
+	}
+}
+
+//处理重点单词长按事件
+-(void) handleLongTapButton:(UILongPressGestureRecognizer*)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        DBLog(@"%@",@"长按事件触发....");
+        // 获取点击坐标
+        CGPoint point =  [gesture locationInView:label];
+        
+        //获取点击的单词
+        NSString *text = self.label.text;
+        UIButton *tapedButton = (UIButton*)[gesture view];
+        NSString *buttonTitle = [tapedButton titleForState:UIControlStateNormal];
+        for (NSString *expression in expressions) {
+            NSString *match;
+            NSEnumerator *enumerator = [text matchEnumeratorWithRegex:expression];
+            while (match = [enumerator nextObject]) {
+                if ([match hasPrefix:buttonTitle]) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:IFTweetLabelLongTapNotification object:[NSArray arrayWithObjects:match,[NSValue valueWithCGPoint:point], nil]];
+                }
+            }
+        }
+    }
+}
+
+//处理页面单击事件
+-(void) handleSingleTap:(UIGestureRecognizer*)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        DBLog(@"%@",@"单击事件触发");
+    }
+}
+
+#pragma mark gesture delegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([[touch view] isKindOfClass:[UIButton class]]) {
+        return YES;
+    }
+    return YES;
 }
 
 @end

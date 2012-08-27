@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-#define kCotentFont [UIFont systemFontOfSize:17.0f]
 @class CHAPTER;
-@class IFTweetLabel;
 @interface ReadViewController : UIViewController {
     CHAPTER *chapter;
     int subjectType;//主题类型　１：春　２：夏　３：秋　４：冬
-    UIScrollView *scrollView;
     NSArray *wordsArray;
-    IFTweetLabel *contentLabel;
+    NSTimer *playBarTimer;
+    int playLBarLeftTime;
+    NSTimer *wordExplainTimer;
+    int wordExplainLeftTime;
 }
 
 @property (nonatomic,retain) CHAPTER *chapter;
@@ -28,5 +28,13 @@
 
 //解析重点词汇
 -(NSArray*)seperatorWords;
+
+//处理单击事件
+-(void) handleTapGesture:(UIGestureRecognizer*)gesture;
+
+//处理双击事件
+-(void) handleDoubleTapGesture:(UIGestureRecognizer *)gesture;
+
+-(void) plaBarTimerStart;
 
 @end

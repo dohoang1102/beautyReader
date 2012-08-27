@@ -9,10 +9,16 @@
 #import "ReadViewController.h"
 #import "CHAPTER.h"
 #import "ChapterService.h"
-#import "IFTweetLabel.h"
 #import "WORD.h"
+#import "ReaderView.h"
+#import "Playbar.h"
 
 @interface ReadViewController ()
+
+//计时器调用
+-(void) reciprocalTimer:(NSTimer*)timer;
+
+-(void) plaBarTimerStop;
 
 @end
 
@@ -54,36 +60,15 @@
     UIBarButtonItem *rightItem = [[[UIBarButtonItem alloc] initWithTitle:@"收藏夹" style:UIBarButtonItemStylePlain target:self action:@selector(showFavorite)] autorelease];
     self.navigationItem.rightBarButtonItem = rightItem;
     
-    //计算文本高度
-    NSString *content = [[NSString alloc] initWithData:chapter.chapterEn encoding:NSUTF8StringEncoding];
-    CGSize contentSize = [content sizeWithFont:kCotentFont constrainedToSize:CGSizeMake(self.view.frame.size.width, 10000) lineBreakMode:UILineBreakModeWordWrap];
-    content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\n"];
-    
-    //添加scrollview
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    scrollView.contentSize = CGSizeMake(self.view.frame.size.width, contentSize.height+80);
-    scrollView.backgroundColor = [UIColor whiteColor];
-    scrollView.scrollEnabled = YES;
-    [self.view addSubview:scrollView];
-    [scrollView release];
-    
     //查询重点词汇
     ChapterService *service = [[[ChapterService alloc] init] autorelease];
     wordsArray = [[service queryWordsWithChapter:self.chapter] retain];
-    //解析重点词汇
-<<<<<<< HEAD
-    contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(0, 0, scrollView.frame.size.width, contentSize.height)];
-=======
-    contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(5, 0, scrollView.frame.size.width-10, scrollView.contentSize.height-60)];
->>>>>>> sync
-    contentLabel.text = content;
-    [contentLabel setNumberOfLines:0];
-    [contentLabel setExpressions:[self seperatorWords]];
-    [contentLabel setFont:kCotentFont];
-    [contentLabel setLinksEnabled:YES];
-    [contentLabel setExpressions:[NSArray arrayWithObject:@"all"]];
-    [scrollView addSubview:contentLabel];
-    [contentLabel release];
+    
+    //设置视图
+    ReaderView *readView = [[ReaderView alloc] initWithFrame:self.view.frame];
+    readView.controller = self;
+    self.view = readView;
+    [readView release];
 }
 
 -(void) showFavorite {
@@ -91,11 +76,48 @@
 }
 
 -(void) back {
+    [((ReaderView*)self.view).playBar stop];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void) pauseOrPlay:(id)sender {
-    
+    [self plaBarTimerStop];
+    UIButton *playBtn = (UIButton*)sender;
+    if (!playBtn.selected) {//播放
+        [((ReaderView*)self.view).playBar play];
+        [UIView animateWithDuration:.5f animations:^(void) {
+            ((ReaderView*)self.view).playBar.alpha = 1;
+        }];
+        [self plaBarTimerStart];
+    } else {
+        [((ReaderView*)self.view).playBar pause];
+    }
+    playBtn.selected = !playBtn.selected;
+}
+
+-(void) reciprocalTimer:(NSTimer*)timer {
+    if (timer == playBarTimer) {
+        playLBarLeftTime++;
+        if (playLBarLeftTime > 5) {
+            [self plaBarTimerStop];
+            [UIView animateWithDuration:1.0f animations:^(void) {
+                ((ReaderView*)self.view).playBar.alpha = 0;
+            }];
+        }
+    }
+}
+
+-(void) plaBarTimerStart {
+    [self plaBarTimerStop];
+    playLBarLeftTime = 0;
+    playBarTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(reciprocalTimer:) userInfo:nil repeats:YES];
+}
+
+-(void) plaBarTimerStop {
+    if (playBarTimer) {
+        [playBarTimer invalidate];
+        playBarTimer = nil;
+    }
 }
 
 - (void)viewDidUnload
@@ -114,19 +136,12 @@
     if (!wordsArray) {
         return array;
     }
-<<<<<<< HEAD
-=======
-    /*
->>>>>>> sync
     for (WORD *word in wordsArray) {
         NSArray *wordConArr = [word.content componentsSeparatedByString:@"|"];
         if (wordConArr && [wordConArr count] > 0) {
             [array addObject:[wordConArr objectAtIndex:0]];
-            NSLog(@"-------> %@",[wordConArr objectAtIndex:0]);
         }
     }
-     */
-    [array addObject:@"timeframe"];
     return array;
 }
 
@@ -134,6 +149,25 @@
     [chapter release];
     [wordsArray release];
     [super dealloc];
+}
+
+#pragma mark - tap handller
+
+//处理单击事件
+-(void) handleTapGesture:(UIGestureRecognizer*)gesture {
+    DBLog(@"%@",@"单击事件触发");
+    if (((ReaderView*)self.view).playBar.hasBegan &&((ReaderView*)self.view).playBar.alpha == 0) {
+        [UIView animateWithDuration:.5f animations:^(void){
+            ((ReaderView*)self.view).playBar.alpha = 1;
+        } completion:^(BOOL finished) {
+            [self plaBarTimerStart];
+        }];
+    }
+}
+
+//处理双击事件
+-(void) handleDoubleTapGesture:(UIGestureRecognizer *)gesture {
+    DBLog(@"%@",@"双击事件触发");
 }
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 extern NSString *IFTweetLabelURLNotification;//单击触发通知
-extern NSString *IFTWeetLabelLongTapNotification;//长按触发通知
+extern NSString *IFTweetLabelLongTapNotification;//长按触发通知
 
 // NOTE: Yeah, it would make more sense to subclass UILabel to do this. But all the
 // the UIButtons that got placed on top of the UILabel were not tappable. No amount of
@@ -19,7 +19,7 @@ extern NSString *IFTWeetLabelLongTapNotification;//长按触发通知
 // Instead, a normal view is used and an UILabel methods are supported through forward
 // invocation.
 
-@interface IFTweetLabel : UIView 
+@interface IFTweetLabel : UIView<UIGestureRecognizerDelegate>
 {
 	UIColor *normalColor;
 	UIColor *highlightColor;

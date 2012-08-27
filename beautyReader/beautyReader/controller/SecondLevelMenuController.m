@@ -100,10 +100,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ReadViewController *readViewCtrl = [[[ReadViewController alloc] init] autorelease];
+    ReadViewController *readViewCtrl = [[ReadViewController alloc] init];
     readViewCtrl.subjectType = self.subjectType;
     readViewCtrl.chapter = [self.dataSourceArray objectAtIndex:[indexPath row]];
     [self.navigationController pushViewController:readViewCtrl animated:YES];
+    [readViewCtrl release];
 }
 
 @end

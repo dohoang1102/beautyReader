@@ -28,7 +28,9 @@
 {
     [super viewDidLoad];
 	self.view.frame = [UIApplication sharedApplication].keyWindow.frame;
-    self.view = [[[FavoritesView alloc] initWithFrame:self.view.frame] autorelease];
+    FavoritesView *view = [[[FavoritesView alloc] initWithFrame:self.view.frame] autorelease];
+    view.controller = self;
+    self.view = view;
     self.title = @"我的收藏";
 }
 

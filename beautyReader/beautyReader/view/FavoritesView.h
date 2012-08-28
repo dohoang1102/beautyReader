@@ -7,14 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @class WordListView;
 @class SentenceListView;
-@interface FavoritesView : UIView {
+@class FavoritesViewController;
+@interface FavoritesView : UIView<MBProgressHUDDelegate> {
     WordListView *wordListView;
     SentenceListView *sentenceView;
     NSArray *wordList;
     NSArray *sentenceList;
+    MBProgressHUD *HUD;
+    FavoritesViewController *controller;
+    BOOL isFirstLoad;
 }
+
+@property (nonatomic,assign) FavoritesViewController *controller;
 
 @end

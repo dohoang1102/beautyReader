@@ -46,6 +46,22 @@
     return wordsArray;
 }
 
+-(NSArray*) queryFavoritesWords {
+    CoreDataFactory *factory = [CoreDataFactory sharedInstance];
+    NSManagedObjectContext *context = [factory managedObjectContext];
+    NSFetchRequest *request = [[[NSFetchRequest alloc] initWithEntityName:@"WORD"] autorelease];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"majorWord=1"];
+    [request setPredicate:predicate];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"opTime" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sort]];
+    NSError *error = nil;
+    NSArray *wordsArray = [context executeFetchRequest:request error:&error];
+    if (error) {
+        ELog(@"query favor word list error, errorInfo:%@",[error localizedDescription]);
+    }
+    return wordsArray;
+}
+
 -(BOOL) updateWords:(WORD*)word {
     CoreDataFactory *factory = [CoreDataFactory sharedInstance];
     NSManagedObjectContext *context = [factory managedObjectContext];

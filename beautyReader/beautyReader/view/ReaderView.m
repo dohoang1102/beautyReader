@@ -86,7 +86,7 @@
     [self addSubview:playBar];
     playBar.alpha = 0;
     playBar.delegate = self;
-    [self performSelector:@selector(setPlayBar) withObject:nil afterDelay:0.1f];
+    [self performSelector:@selector(setPlayBar) withObject:nil afterDelay:.5f];
     [playBar release];
     
     //添加toolbar

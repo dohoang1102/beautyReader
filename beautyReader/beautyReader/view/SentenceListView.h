@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SentenceListView : UITableView
+@interface SentenceListView : UITableView<UITableViewDelegate,UITableViewDataSource> {
+    NSArray *sentenceListArray;
+}
+
+@property (nonatomic,retain) NSArray *sentenceListArray;
+
 
 @end

@@ -91,6 +91,7 @@
         [favoritesButton setTitle:@"已收藏" forState:UIControlStateNormal];
         word.majorWord = [NSNumber numberWithInt:1];
     }
+    word.opTime = [NSDate date];
     ChapterService *service = [[[ChapterService alloc] init] autorelease];
     [service updateWords:word];
     favoritesButton.selected = !favoritesButton.selected;

@@ -22,4 +22,7 @@
 //更新重点词汇
 -(BOOL) updateWords:(WORD*)word;
 
+//查询已收藏的重点词汇
+-(NSArray*) queryFavoritesWords;
+
 @end

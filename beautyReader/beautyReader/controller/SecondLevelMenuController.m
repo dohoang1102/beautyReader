@@ -10,6 +10,7 @@
 #import "SecondLevelMenuView.h"
 #import "SecondLevelMenuCell.h"
 #import "ReadViewController.h"
+#import "FavoritesViewController.h"
 
 @interface SecondLevelMenuController ()
 
@@ -55,7 +56,9 @@
 }
 
 -(void) showFavorite {
-    
+    FavoritesViewController *favoritesController = [[FavoritesViewController alloc] init];
+    [self.navigationController pushViewController:favoritesController animated:YES];
+    [favoritesController release];
 }
 
 -(void) dealloc {

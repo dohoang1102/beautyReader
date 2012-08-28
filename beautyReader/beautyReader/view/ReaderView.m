@@ -10,10 +10,11 @@
 #import "IFTweetLabel.h"
 #import "ReadViewController.h"
 #import "CHAPTER.h"
+#import "FTAnimation.h"
 
 @implementation ReaderView
 
-@synthesize controller,playBar;
+@synthesize controller,playBar,toolBar,scrollView,translationView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -35,15 +36,27 @@
     content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\n"];
     
     //添加scrollview
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    scrollView.contentSize = CGSizeMake(self.frame.size.width, contentSize.height+80);
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height+kToolBarHeight)];
     scrollView.backgroundColor = [UIColor whiteColor];
+    scrollView.showsVerticalScrollIndicator = NO;
     scrollView.scrollEnabled = YES;
     [self addSubview:scrollView];
     [scrollView release];
     
+    //添加文章标题
+    CGSize titleSize = [controller.chapter.titleEn sizeWithFont:[UIFont boldSystemFontOfSize:20.0f] constrainedToSize:CGSizeMake(self.frame.size.width, 10000) lineBreakMode:UILineBreakModeWordWrap];
+    scrollView.contentSize = CGSizeMake(self.frame.size.width, contentSize.height+titleSize.height+130);
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.frame.size.width, titleSize.height)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+    titleLabel.textAlignment = UITextAlignmentCenter;
+    titleLabel.numberOfLines = 3;
+    titleLabel.text = controller.chapter.titleEn;
+    [scrollView addSubview:titleLabel];
+    [titleLabel release];
+    
     //解析重点词汇
-    contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(5, 0, scrollView.frame.size.width-10, scrollView.contentSize.height-60)];
+    contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(5, titleSize.height+10, scrollView.frame.size.width-10, scrollView.contentSize.height-130)];
     contentLabel.text = content;
     [contentLabel setNumberOfLines:0];
     [contentLabel setExpressions:[controller seperatorWords]];
@@ -75,14 +88,37 @@
     playBar.delegate = self;
     [self performSelector:@selector(setPlayBar) withObject:nil afterDelay:0.1f];
     [playBar release];
+    
+    //添加toolbar
+    toolBar = [[ToolsBar alloc] initWithFrame:CGRectMake(0, self.frame.size.height - kToolBarHeight, self.frame.size.width, kToolBarHeight)];
+    toolBar.delegate = self;
+    [self addSubview:toolBar];
+    [toolBar release];
 }
 
 -(void) setPlayBar {
     [playBar setAudioFile:controller.chapter.chapterAudioUrl];
 }
 
+-(void) hideToolBar {
+    [UIView animateWithDuration:.2f animations:^(void) {
+        CGRect rect = toolBar.frame;
+        rect.origin.y = rect.origin.y + rect.size.height*2;
+        toolBar.frame = rect;
+    }];
+}
+
+-(void) showToolBar {
+    [UIView animateWithDuration:.2f animations:^(void) {
+        CGRect rect = toolBar.frame;
+        rect.origin.y = rect.origin.y - rect.size.height*2;
+        toolBar.frame = rect;
+    }];
+}
+
 -(void) dealloc {
     DBLog(@"%@",NSStringFromSelector(_cmd));
+    [translationView release];
     [super dealloc];
 }
 
@@ -99,6 +135,50 @@
 
 -(void) playBarChanged:(float) playBarValue {
     [controller plaBarTimerStart];
+}
+
+#pragma mark - toolbar delegate
+-(void) subjectTouchEvent {
+    
+}
+
+-(void) chapterTypeTouchEvent:(int) eventType {
+    
+}
+
+-(void) sentenceTouchEvent {
+    
+}
+
+-(void) gameTouchEvent {
+    
+}
+
+#pragma mark - translation
+
+-(void) showTranslationView {
+    if (translationView) {
+        [self addSubview:translationView];
+        [translationView release];
+        [translationView popIn:.4f delegate:nil];
+    }
+}
+
+-(void) hideTranslationView {
+    if (translationView) {
+        [translationView popOut:.4f delegate:self];
+    }
+}
+
+-(void) removeTranslationView {
+    if (translationView) {
+        [translationView removeFromSuperview];
+        translationView = nil;
+    }
+}
+
+-(void) animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    [self removeTranslationView];
 }
 
 @end

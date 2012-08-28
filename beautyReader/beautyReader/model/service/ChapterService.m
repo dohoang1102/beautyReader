@@ -46,5 +46,12 @@
     return wordsArray;
 }
 
+-(BOOL) updateWords:(WORD*)word {
+    CoreDataFactory *factory = [CoreDataFactory sharedInstance];
+    NSManagedObjectContext *context = [factory managedObjectContext];
+    NSError *error = nil;
+    return [context save:&error];
+}
+
 
 @end

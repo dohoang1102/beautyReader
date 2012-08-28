@@ -10,6 +10,7 @@
 
 @class SUBJECT;
 @class CHAPTER;
+@class WORD;
 @interface ChapterService : NSObject
 
 //查询二级标题下的文章列表
@@ -17,5 +18,8 @@
 
 //查询重点词汇
 -(NSArray*) queryWordsWithChapter:(CHAPTER*)chapter;
+
+//更新重点词汇
+-(BOOL) updateWords:(WORD*)word;
 
 @end

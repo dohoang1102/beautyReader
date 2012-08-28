@@ -33,7 +33,14 @@
 		5E01306A15E62FDB0070BF05 /* 01原文.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306115E62FDB0070BF05 /* 01原文.txt */; };
 		5E01306B15E62FDB0070BF05 /* 01原文.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E01306115E62FDB0070BF05 /* 01原文.txt */; };
 		5E01307215E635070070BF05 /* coreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E01307015E635070070BF05 /* coreData.xcdatamodeld */; };
+		5E7345C315ECC91E00F7AD79 /* MCSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345C215ECC91E00F7AD79 /* MCSegmentedControl.m */; };
+		5E7345C715ECC94500F7AD79 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345C615ECC94500F7AD79 /* FavoritesViewController.m */; };
+		5E7345CA15ECC96000F7AD79 /* FavoritesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345C915ECC96000F7AD79 /* FavoritesView.m */; };
+		5E7345CD15ECCA9B00F7AD79 /* WordListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345CC15ECCA9B00F7AD79 /* WordListView.m */; };
+		5E7345D015ECCAAE00F7AD79 /* SentenceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345CF15ECCAAE00F7AD79 /* SentenceListView.m */; };
 		5E98EF1B15EB7724002AACCC /* ReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98EF1A15EB7724002AACCC /* ReaderView.m */; };
+		5E98EF2715EC7278002AACCC /* ToolsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98EF2615EC7278002AACCC /* ToolsBar.m */; };
+		5E98EF2B15EC9EE4002AACCC /* WordTranslateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98EF2A15EC9EE4002AACCC /* WordTranslateView.m */; };
 		5EA7837115E608500099C166 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7836E15E608500099C166 /* RegexKitLite.m */; };
 		5EA7837215E608500099C166 /* RKLMatchEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7837015E608500099C166 /* RKLMatchEnumerator.m */; };
 		5EA7837515E608960099C166 /* IFTweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7837415E608960099C166 /* IFTweetLabel.m */; };
@@ -125,8 +132,22 @@
 		5E01306015E62FDB0070BF05 /* 01英汉.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01英汉.txt"; path = "resources/01英汉.txt"; sourceTree = "<group>"; };
 		5E01306115E62FDB0070BF05 /* 01原文.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "01原文.txt"; path = "resources/01原文.txt"; sourceTree = "<group>"; };
 		5E01307115E635070070BF05 /* coreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreData.xcdatamodel; sourceTree = "<group>"; };
+		5E7345C115ECC91E00F7AD79 /* MCSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSegmentedControl.h; path = foundation/utils/MCSegmentedControl.h; sourceTree = "<group>"; };
+		5E7345C215ECC91E00F7AD79 /* MCSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSegmentedControl.m; path = foundation/utils/MCSegmentedControl.m; sourceTree = "<group>"; };
+		5E7345C515ECC94500F7AD79 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesViewController.h; path = controller/FavoritesViewController.h; sourceTree = "<group>"; };
+		5E7345C615ECC94500F7AD79 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesViewController.m; path = controller/FavoritesViewController.m; sourceTree = "<group>"; };
+		5E7345C815ECC96000F7AD79 /* FavoritesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesView.h; path = view/FavoritesView.h; sourceTree = "<group>"; };
+		5E7345C915ECC96000F7AD79 /* FavoritesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesView.m; path = view/FavoritesView.m; sourceTree = "<group>"; };
+		5E7345CB15ECCA9B00F7AD79 /* WordListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordListView.h; path = view/WordListView.h; sourceTree = "<group>"; };
+		5E7345CC15ECCA9B00F7AD79 /* WordListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordListView.m; path = view/WordListView.m; sourceTree = "<group>"; };
+		5E7345CE15ECCAAE00F7AD79 /* SentenceListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SentenceListView.h; path = view/SentenceListView.h; sourceTree = "<group>"; };
+		5E7345CF15ECCAAE00F7AD79 /* SentenceListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SentenceListView.m; path = view/SentenceListView.m; sourceTree = "<group>"; };
 		5E98EF1915EB7724002AACCC /* ReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderView.h; path = view/ReaderView.h; sourceTree = "<group>"; };
 		5E98EF1A15EB7724002AACCC /* ReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReaderView.m; path = view/ReaderView.m; sourceTree = "<group>"; };
+		5E98EF2515EC7278002AACCC /* ToolsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolsBar.h; path = view/ToolsBar.h; sourceTree = "<group>"; };
+		5E98EF2615EC7278002AACCC /* ToolsBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToolsBar.m; path = view/ToolsBar.m; sourceTree = "<group>"; };
+		5E98EF2915EC9EE3002AACCC /* WordTranslateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordTranslateView.h; path = view/WordTranslateView.h; sourceTree = "<group>"; };
+		5E98EF2A15EC9EE4002AACCC /* WordTranslateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordTranslateView.m; path = view/WordTranslateView.m; sourceTree = "<group>"; };
 		5EA7836D15E608500099C166 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = foundation/RegexKitLite/RegexKitLite.h; sourceTree = "<group>"; };
 		5EA7836E15E608500099C166 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = foundation/RegexKitLite/RegexKitLite.m; sourceTree = "<group>"; };
 		5EA7836F15E608500099C166 /* RKLMatchEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKLMatchEnumerator.h; path = foundation/RegexKitLite/RKLMatchEnumerator.h; sourceTree = "<group>"; };
@@ -458,6 +479,16 @@
 				5E98EF1A15EB7724002AACCC /* ReaderView.m */,
 				DFDA4F2115EBB1FD00293526 /* PlayBar.h */,
 				DFDA4F2215EBB1FD00293526 /* PlayBar.m */,
+				5E98EF2515EC7278002AACCC /* ToolsBar.h */,
+				5E98EF2615EC7278002AACCC /* ToolsBar.m */,
+				5E98EF2915EC9EE3002AACCC /* WordTranslateView.h */,
+				5E98EF2A15EC9EE4002AACCC /* WordTranslateView.m */,
+				5E7345C815ECC96000F7AD79 /* FavoritesView.h */,
+				5E7345C915ECC96000F7AD79 /* FavoritesView.m */,
+				5E7345CB15ECCA9B00F7AD79 /* WordListView.h */,
+				5E7345CC15ECCA9B00F7AD79 /* WordListView.m */,
+				5E7345CE15ECCAAE00F7AD79 /* SentenceListView.h */,
+				5E7345CF15ECCAAE00F7AD79 /* SentenceListView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -473,6 +504,8 @@
 				DFC5DEA515EA35E100DCE9BE /* SecondLevelMenuController.m */,
 				DFC5DEB415EA62BA00DCE9BE /* ReadViewController.h */,
 				DFC5DEB515EA62BA00DCE9BE /* ReadViewController.m */,
+				5E7345C515ECC94500F7AD79 /* FavoritesViewController.h */,
+				5E7345C615ECC94500F7AD79 /* FavoritesViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -552,6 +585,8 @@
 		DFEB663415E539F000BD53A5 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				5E7345C115ECC91E00F7AD79 /* MCSegmentedControl.h */,
+				5E7345C215ECC91E00F7AD79 /* MCSegmentedControl.m */,
 				5EA7837315E608960099C166 /* IFTweetLabel.h */,
 				5EA7837415E608960099C166 /* IFTweetLabel.m */,
 				DFEB663515E53A3600BD53A5 /* FileUtils.h */,
@@ -735,6 +770,13 @@
 				DFC5DEB615EA62BA00DCE9BE /* ReadViewController.m in Sources */,
 				5E98EF1B15EB7724002AACCC /* ReaderView.m in Sources */,
 				DFDA4F2315EBB1FD00293526 /* PlayBar.m in Sources */,
+				5E98EF2715EC7278002AACCC /* ToolsBar.m in Sources */,
+				5E98EF2B15EC9EE4002AACCC /* WordTranslateView.m in Sources */,
+				5E7345C315ECC91E00F7AD79 /* MCSegmentedControl.m in Sources */,
+				5E7345C715ECC94500F7AD79 /* FavoritesViewController.m in Sources */,
+				5E7345CA15ECC96000F7AD79 /* FavoritesView.m in Sources */,
+				5E7345CD15ECCA9B00F7AD79 /* WordListView.m in Sources */,
+				5E7345D015ECCAAE00F7AD79 /* SentenceListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

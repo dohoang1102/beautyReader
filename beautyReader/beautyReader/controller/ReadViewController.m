@@ -12,6 +12,7 @@
 #import "WORD.h"
 #import "ReaderView.h"
 #import "Playbar.h"
+#import "FavoritesViewController.h"
 
 @interface ReadViewController ()
 
@@ -19,6 +20,12 @@
 -(void) reciprocalTimer:(NSTimer*)timer;
 
 -(void) plaBarTimerStop;
+
+-(void) fullScreen;
+
+-(void) wordExplainTimerStart;
+
+-(void) wordExplainTimerStop;
 
 @end
 
@@ -69,10 +76,20 @@
     readView.controller = self;
     self.view = readView;
     [readView release];
+    
+    //注册气泡事件通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLongTapGesture:) name:IFTweetLabelLongTapNotification object:nil];
 }
 
 -(void) showFavorite {
-    
+    FavoritesViewController *favoritesController = [[FavoritesViewController alloc] init];
+    [self.navigationController pushViewController:favoritesController animated:YES];
+    [favoritesController release];
+}
+
+-(void) hideExplainView {
+    ReaderView *readView = (ReaderView*)self.view;
+    [readView hideTranslationView];
 }
 
 -(void) back {
@@ -81,16 +98,17 @@
 }
 
 -(void) pauseOrPlay:(id)sender {
-    [self plaBarTimerStop];
+    [self plaBarTimerStart];
     UIButton *playBtn = (UIButton*)sender;
     if (!playBtn.selected) {//播放
         [((ReaderView*)self.view).playBar play];
         [UIView animateWithDuration:.5f animations:^(void) {
             ((ReaderView*)self.view).playBar.alpha = 1;
         }];
-        [self plaBarTimerStart];
+        [playBtn setTitle:@"暂停" forState:UIControlStateNormal];
     } else {
         [((ReaderView*)self.view).playBar pause];
+        [playBtn setTitle:@"播放" forState:UIControlStateNormal];
     }
     playBtn.selected = !playBtn.selected;
 }
@@ -103,6 +121,12 @@
             [UIView animateWithDuration:1.0f animations:^(void) {
                 ((ReaderView*)self.view).playBar.alpha = 0;
             }];
+        }
+    } else if (timer == wordExplainTimer) {
+        wordExplainLeftTime++;
+        if (wordExplainLeftTime > 5) {
+            [self wordExplainTimerStop];
+            [self hideExplainView];
         }
     }
 }
@@ -118,6 +142,30 @@
         [playBarTimer invalidate];
         playBarTimer = nil;
     }
+}
+
+-(void) wordExplainTimerStart {
+    [self wordExplainTimerStop];
+    wordExplainLeftTime = 0;
+    wordExplainTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(reciprocalTimer:) userInfo:nil repeats:YES];
+}
+
+-(void) wordExplainTimerStop {
+    if (wordExplainTimer) {
+        [wordExplainTimer invalidate];
+        wordExplainTimer = nil;
+    }
+}
+
+-(void) fullScreen {
+    if (!isFullScreen) {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [(ReaderView*)self.view hideToolBar];
+    } else {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [(ReaderView*)self.view showToolBar];
+    }
+    isFullScreen = !isFullScreen;
 }
 
 - (void)viewDidUnload
@@ -146,6 +194,7 @@
 }
 
 -(void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IFTweetLabelLongTapNotification object:nil];
     [chapter release];
     [wordsArray release];
     [super dealloc];
@@ -156,6 +205,7 @@
 //处理单击事件
 -(void) handleTapGesture:(UIGestureRecognizer*)gesture {
     DBLog(@"%@",@"单击事件触发");
+    /*
     if (((ReaderView*)self.view).playBar.hasBegan &&((ReaderView*)self.view).playBar.alpha == 0) {
         [UIView animateWithDuration:.5f animations:^(void){
             ((ReaderView*)self.view).playBar.alpha = 1;
@@ -163,11 +213,65 @@
             [self plaBarTimerStart];
         }];
     }
+     */
+    ReaderView *readView = (ReaderView*)self.view;
+    if (readView.translationView) {
+        [self wordExplainTimerStop];
+        [readView hideTranslationView];
+    }
+    [self fullScreen];
 }
 
 //处理双击事件
 -(void) handleDoubleTapGesture:(UIGestureRecognizer *)gesture {
     DBLog(@"%@",@"双击事件触发");
+}
+
+//处理长按事件
+-(void) handleLongTapGesture:(NSNotification*)notificcation {
+    //视图移入部分
+    CGPoint textScrollPoint = [((ReaderView*)self.view).scrollView contentOffset];
+    //获取点击到的单词
+    NSString *tapWord = [notificcation.object objectAtIndex:0];
+    ReaderView *readView = (ReaderView*)self.view;
+    [readView removeTranslationView];
+    readView.translationView = [[[WordTranslateView alloc] initWithFrame:CGRectZero] autorelease];
+    for (WORD *word in wordsArray) {
+        NSArray *wordConArr = [word.content componentsSeparatedByString:@"|"];
+        if (wordConArr && [wordConArr count] > 0) {
+            if ([tapWord isEqualToString:[wordConArr objectAtIndex:0]]) {
+                readView.translationView.word = word;
+                break;
+            }
+        }
+    }
+    //获取单击点的坐标
+    CGPoint tapPoint = [(NSValue*)[notificcation.object objectAtIndex:1] CGPointValue];
+    CGFloat xOffset = tapPoint.x - textScrollPoint.x;
+    CGFloat yOffset = tapPoint.y - textScrollPoint.y;
+    ViewDirector direct = LEFT_UP;
+    CGRect transFrame = CGRectZero;
+    if(xOffset <= readView.translationView.frame.size.width && yOffset <= readView.translationView.frame.size.height) {//右下
+        direct = RIGHT_DOWN;
+        transFrame = CGRectMake(xOffset, yOffset+readView.translationView.frame.size.height/2+20, readView.translationView.frame.size.width, readView.translationView.frame.size.height);
+        NSLog(@"...右下");
+    } else if (xOffset <= readView.translationView.frame.size.width && yOffset > readView.translationView.frame.size.height) {//右上
+        direct = RIGHT_UP;
+        transFrame = CGRectMake(xOffset, yOffset-readView.translationView.frame.size.height/2-5, readView.translationView.frame.size.width, readView.translationView.frame.size.height);
+        NSLog(@"右上");
+    } else if (xOffset > readView.translationView.frame.size.width && yOffset <= readView.translationView.frame.size.height) {//左下
+        direct = LEFT_DOWN;
+        transFrame = CGRectMake(xOffset-readView.translationView.frame.size.width-5, yOffset+readView.translationView.frame.size.height/2+20, readView.translationView.frame.size.width, readView.translationView.frame.size.height);
+        NSLog(@"坐下");
+    } else if (xOffset > readView.translationView.frame.size.width && yOffset > readView.translationView.frame.size.height) {//左上
+        direct = LEFT_UP;
+        transFrame = CGRectMake(xOffset-readView.translationView.frame.size.width-5, yOffset-readView.translationView.frame.size.height/2-10, readView.translationView.frame.size.width, readView.translationView.frame.size.height);
+        NSLog(@"坐上");
+    }
+    readView.translationView.frame = transFrame;
+    readView.translationView.director = direct;
+    [readView showTranslationView];
+    [self wordExplainTimerStart];
 }
 
 @end

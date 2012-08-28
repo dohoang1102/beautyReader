@@ -20,26 +20,39 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "beautyReader/foundation/utils/IFTweetLabel.m"
-         timestampString = "367752857.655048"
+         filePath = "beautyReader/controller/ReadViewController.m"
+         timestampString = "367840544.173914"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "114"
-         endingLineNumber = "114"
-         landmarkName = "@implementation IFTweetLabel"
-         landmarkType = "3">
+         startingLineNumber = "233"
+         endingLineNumber = "233"
+         landmarkName = "-handleLongTapGesture:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "beautyReader/foundation/utils/IFTweetLabel.m"
-         timestampString = "367752857.655048"
+         filePath = "beautyReader/view/WordTranslateView.m"
+         timestampString = "367838849.602438"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "263"
-         endingLineNumber = "263"
-         landmarkName = "-createButtons"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
+         landmarkName = "-setWord:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "beautyReader/view/ReaderView.m"
+         timestampString = "367837600.487329"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
+         landmarkName = "-hideTranslationView"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -59,6 +59,7 @@ NSString *IFTweetLabelLongTapNotification = @"IFTweetLabelLongTapNotification";
     [button addGestureRecognizer:gesture];
     [gesture release];
 	[self addSubview:button];
+    button.backgroundColor = [UIColor whiteColor];
      
 }
 
@@ -81,7 +82,7 @@ NSString *IFTweetLabelLongTapNotification = @"IFTweetLabelLongTapNotification";
 			NSString *measureText = [text substringWithRange:measureRange];
 			CGSize measureSize = [measureText sizeWithFont:font];
 			
-			CGRect matchFrame = CGRectMake(measureSize.width - 3.0f, point.y, matchSize.width + 5.0f, matchSize.height);
+			CGRect matchFrame = CGRectMake(measureSize.width - 2.5f, point.y, matchSize.width + 2.0f, matchSize.height);
 			[self createButtonWithText:match withFrame:matchFrame];
 			
 			//NSLog(@"match = %@", match);

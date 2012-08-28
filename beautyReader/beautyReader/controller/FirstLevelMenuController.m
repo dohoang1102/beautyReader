@@ -11,6 +11,7 @@
 #import "FirstLevelMenuCell.h"
 #import "ChapterService.h"
 #import "SecondLevelMenuController.h"
+#import "FavoritesViewController.h"
 
 @interface FirstLevelMenuController ()
 
@@ -56,7 +57,9 @@
 }
 
 -(void) showFavorite {
-    
+    FavoritesViewController *favoritesController = [[FavoritesViewController alloc] init];
+    [self.navigationController pushViewController:favoritesController animated:YES];
+    [favoritesController release];
 }
 
 - (void)viewDidUnload

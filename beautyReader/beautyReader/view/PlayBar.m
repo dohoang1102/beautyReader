@@ -47,6 +47,8 @@
         
         slider = [[UISlider alloc] initWithFrame:CGRectMake(55, 10, frame.size.width -115, 10)];
         slider.minimumValue = 0;
+        slider.maximumValue = 100;
+        slider.value = 0;
         [slider addTarget:self action:@selector(updateProgress:) forControlEvents:UIControlEventValueChanged];
         [self addSubview:slider];
         
@@ -89,7 +91,7 @@
         return;
     }
     [player prepareToPlay];
-    totalTimeLabel.text = [NSString stringWithFormat:@"-%02d:%02d",(int)player.duration/60,(int)player.duration%60];
+    totalTimeLabel.text = [NSString stringWithFormat:@"-%02d:%02d",(int)(round(player.duration))/60,(int)(round(player.duration))%60];
     slider.maximumValue = player.duration;
 }
 
@@ -143,17 +145,18 @@
 }
 
 -(void) updateProgress {
-    startTimeLabel.text = [NSString stringWithFormat:@"%02d:%02d",(int)player.currentTime/60,(int)player.currentTime%60];
+    slider.value = round(player.currentTime);
+    startTimeLabel.text = [NSString stringWithFormat:@"%02d:%02d",(int)round(player.currentTime)/60,(int)round(player.currentTime)%60];
     float leftTime = player.duration - player.currentTime;
-    NSString *leftTimes = [NSString stringWithFormat:@"-%02d:%02d",(int)leftTime/60,(int)leftTime%60];
+    NSString *leftTimes = [NSString stringWithFormat:@"-%02d:%02d",(int)round(leftTime)/60,(int)round(leftTime)%60];
     totalTimeLabel.text = leftTimes;
 }
 
 -(void) updateProgress:(id) sender {
     player.currentTime = slider.value;
-    startTimeLabel.text = [NSString stringWithFormat:@"%02d:%02d",(int)slider.value/60,(int)slider.value%60];
+    startTimeLabel.text = [NSString stringWithFormat:@"%02d:%02d",(int)round(slider.value)/60,(int)round(slider.value)%60];
     float leftTime = player.duration - slider.value;
-    NSString *leftTimes = [NSString stringWithFormat:@"-%02d:%02d",(int)leftTime/60,(int)leftTime%60];
+    NSString *leftTimes = [NSString stringWithFormat:@"-%02d:%02d",(int)round(leftTime)/60,(int)round(leftTime)%60];
     totalTimeLabel.text = leftTimes;
     if (delegate && [delegate respondsToSelector:@selector(playBarChanged:)]) {
         [delegate playBarChanged:slider.value];

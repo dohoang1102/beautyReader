@@ -17,6 +17,7 @@
     int playLBarLeftTime;
     NSTimer *wordExplainTimer;
     int wordExplainLeftTime;
+    BOOL isFullScreen;
 }
 
 @property (nonatomic,retain) CHAPTER *chapter;
@@ -35,6 +36,10 @@
 //处理双击事件
 -(void) handleDoubleTapGesture:(UIGestureRecognizer *)gesture;
 
+//播放进度条定时器开始
 -(void) plaBarTimerStart;
+
+//隐藏气泡
+-(void) hideExplainView;
 
 @end

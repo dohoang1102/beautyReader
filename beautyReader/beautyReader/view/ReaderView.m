@@ -147,7 +147,7 @@
 }
 
 -(void) sentenceTouchEvent {
-    
+    [controller showSentenceView];
 }
 
 -(void) gameTouchEvent {

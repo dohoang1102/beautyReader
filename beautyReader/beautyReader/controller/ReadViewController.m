@@ -13,6 +13,7 @@
 #import "ReaderView.h"
 #import "Playbar.h"
 #import "FavoritesViewController.h"
+#import "SentenceViewController.h"
 
 @interface ReadViewController ()
 
@@ -272,6 +273,14 @@
     readView.translationView.director = direct;
     [readView showTranslationView];
     [self wordExplainTimerStart];
+}
+
+#pragma mark - deal tool bar function
+-(void) showSentenceView {
+    SentenceViewController *sentenceCtroller = [[SentenceViewController alloc] init];
+    sentenceCtroller.chapter = self.chapter;
+    [self.navigationController pushViewController:sentenceCtroller animated:YES];
+    [sentenceCtroller release];
 }
 
 @end

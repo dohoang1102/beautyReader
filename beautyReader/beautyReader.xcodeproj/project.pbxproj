@@ -38,6 +38,7 @@
 		5E7345CA15ECC96000F7AD79 /* FavoritesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345C915ECC96000F7AD79 /* FavoritesView.m */; };
 		5E7345CD15ECCA9B00F7AD79 /* WordListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345CC15ECCA9B00F7AD79 /* WordListView.m */; };
 		5E7345D015ECCAAE00F7AD79 /* SentenceListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345CF15ECCAAE00F7AD79 /* SentenceListView.m */; };
+		5E7345DF15EE008100F7AD79 /* SentenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7345DE15EE008100F7AD79 /* SentenceViewController.m */; };
 		5E98EF1B15EB7724002AACCC /* ReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98EF1A15EB7724002AACCC /* ReaderView.m */; };
 		5E98EF2715EC7278002AACCC /* ToolsBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98EF2615EC7278002AACCC /* ToolsBar.m */; };
 		5E98EF2B15EC9EE4002AACCC /* WordTranslateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98EF2A15EC9EE4002AACCC /* WordTranslateView.m */; };
@@ -143,6 +144,8 @@
 		5E7345CC15ECCA9B00F7AD79 /* WordListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordListView.m; path = view/WordListView.m; sourceTree = "<group>"; };
 		5E7345CE15ECCAAE00F7AD79 /* SentenceListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SentenceListView.h; path = view/SentenceListView.h; sourceTree = "<group>"; };
 		5E7345CF15ECCAAE00F7AD79 /* SentenceListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SentenceListView.m; path = view/SentenceListView.m; sourceTree = "<group>"; };
+		5E7345DD15EE008100F7AD79 /* SentenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SentenceViewController.h; path = controller/SentenceViewController.h; sourceTree = "<group>"; };
+		5E7345DE15EE008100F7AD79 /* SentenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SentenceViewController.m; path = controller/SentenceViewController.m; sourceTree = "<group>"; };
 		5E98EF1915EB7724002AACCC /* ReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderView.h; path = view/ReaderView.h; sourceTree = "<group>"; };
 		5E98EF1A15EB7724002AACCC /* ReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReaderView.m; path = view/ReaderView.m; sourceTree = "<group>"; };
 		5E98EF2515EC7278002AACCC /* ToolsBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolsBar.h; path = view/ToolsBar.h; sourceTree = "<group>"; };
@@ -509,6 +512,8 @@
 				DFC5DEB515EA62BA00DCE9BE /* ReadViewController.m */,
 				5E7345C515ECC94500F7AD79 /* FavoritesViewController.h */,
 				5E7345C615ECC94500F7AD79 /* FavoritesViewController.m */,
+				5E7345DD15EE008100F7AD79 /* SentenceViewController.h */,
+				5E7345DE15EE008100F7AD79 /* SentenceViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -783,6 +788,7 @@
 				5E7345CD15ECCA9B00F7AD79 /* WordListView.m in Sources */,
 				5E7345D015ECCAAE00F7AD79 /* SentenceListView.m in Sources */,
 				DF30EEA315ED17150080DD6C /* MBProgressHUD.m in Sources */,
+				5E7345DF15EE008100F7AD79 /* SentenceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

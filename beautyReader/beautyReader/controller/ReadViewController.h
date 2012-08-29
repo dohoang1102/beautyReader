@@ -42,4 +42,7 @@
 //隐藏气泡
 -(void) hideExplainView;
 
+//跳转妙语页面
+-(void) showSentenceView;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "WordListView.h"
 #import "WORD.h"
+#import "ChapterService.h"
 
 @interface WordListView()
 
@@ -56,11 +57,13 @@
         contentLabel.backgroundColor = [UIColor clearColor];
         contentLabel.tag = 10;
         contentLabel.numberOfLines = 0;
+        contentLabel.opaque = NO;
+        contentLabel.font = [UIFont systemFontOfSize:15.0f];
         contentLabel.lineBreakMode = UILineBreakModeWordWrap;
         [cell.contentView addSubview:contentLabel];
         [contentLabel release];
         //设置收藏按钮
-        UIButton *favBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIButton *favBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         favBtn.showsTouchWhenHighlighted = YES;
         favBtn.frame = CGRectMake(0, 0, 50, 25);
         [favBtn addTarget:self action:@selector(markAsFavorite:) forControlEvents:UIControlEventTouchUpInside];
@@ -85,8 +88,9 @@
         }
     }
     CGSize wordSize = [wordString sizeWithFont:contentLabl.font constrainedToSize:CGSizeMake(cell.frame.size.width-20, 10000) lineBreakMode:UILineBreakModeWordWrap];
-    contentLabl.frame = CGRectMake(10, 5, cell.frame.size.width-20, wordSize.height+10);
-    [contentLabl sizeToFit];
+    contentLabl.frame = CGRectMake(10, 0, cell.frame.size.width-20, wordSize.height+10);
+    //[contentLabl sizeToFit];
+    cell.frame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, wordSize.height + 20);
     contentLabl.text = wordString;
     return cell;
 }
@@ -97,7 +101,24 @@
 }
 
 -(void) markAsFavorite:(id)sender {
-    
+    UIButton *markAsFavoriteButton = (UIButton*)sender;
+    UITableViewCell *cell = (UITableViewCell*)markAsFavoriteButton.superview;
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    WORD *opWord = [wordListArray objectAtIndex:[indexPath row]];
+    opWord.majorWord = [NSNumber numberWithBool:NO];
+    ChapterService *service = [[[ChapterService alloc] init] autorelease];
+    if ([service updateWords:opWord]) {
+        NSMutableArray *tmpArray = [NSMutableArray arrayWithArray:wordListArray];
+        [tmpArray removeObjectAtIndex:[indexPath row]];
+        self.wordListArray = tmpArray;
+        [self beginUpdates];
+        [self deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self endUpdates];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"操作失败" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+        [alert release];
+    }
 }
 
 @end

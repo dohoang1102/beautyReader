@@ -11,6 +11,7 @@
 #import "CHAPTER.h"
 #import "WORD.h"
 #import "CoreDataFactory.h"
+#import "SENTENCE.h"
 
 @implementation ChapterService
 
@@ -62,6 +63,22 @@
     return wordsArray;
 }
 
+-(NSArray*) queryFavoritesSentences {
+    CoreDataFactory *factory = [CoreDataFactory sharedInstance];
+    NSManagedObjectContext *context = [factory managedObjectContext];
+    NSFetchRequest *request = [[[NSFetchRequest alloc] initWithEntityName:@"SENTENCE"] autorelease];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"majorSentence=1"];
+    [request setPredicate:predicate];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"opTime" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sort]];
+    NSError *error = nil;
+    NSArray *sentenceArray = [context executeFetchRequest:request error:&error];
+    if (error) {
+        ELog(@"query sentence list error, errorInfo:%@",[error localizedDescription]);
+    }
+    return sentenceArray;
+}
+
 -(BOOL) updateWords:(WORD*)word {
     CoreDataFactory *factory = [CoreDataFactory sharedInstance];
     NSManagedObjectContext *context = [factory managedObjectContext];
@@ -69,5 +86,11 @@
     return [context save:&error];
 }
 
+-(BOOL) updateSentence:(SENTENCE*)sentence {
+    CoreDataFactory *factory = [CoreDataFactory sharedInstance];
+    NSManagedObjectContext *context = [factory managedObjectContext];
+    NSError *error = nil;
+    return [context save:&error];
+}
 
 @end

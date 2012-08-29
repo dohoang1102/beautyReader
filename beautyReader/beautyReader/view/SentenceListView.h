@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    FROM_FAVORITES,
+    FROM_READER
+} SENTENCE_CHANNEL;
+
 @interface SentenceListView : UITableView<UITableViewDelegate,UITableViewDataSource> {
     NSArray *sentenceListArray;
+    SENTENCE_CHANNEL channel;
 }
 
 @property (nonatomic,retain) NSArray *sentenceListArray;
-
+@property (nonatomic,assign) SENTENCE_CHANNEL channel;
 
 @end

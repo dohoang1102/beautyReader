@@ -69,7 +69,7 @@
     UIButton *chapterBtn = (UIButton*)sender;
     if (chapterContentType == 0) {
         chapterContentType = 1;
-        [chapterBtn setTitle:@"英文" forState:UIControlStateNormal];
+        [chapterBtn setTitle:@"中文" forState:UIControlStateNormal];
     } else if (chapterContentType == 1) {
         chapterContentType = 2;
         [chapterBtn setTitle:@"中/英" forState:UIControlStateNormal];

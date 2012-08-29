@@ -44,13 +44,14 @@
     [scrollView release];
     
     //添加文章标题
-    CGSize titleSize = [controller.chapter.titleEn sizeWithFont:[UIFont boldSystemFontOfSize:20.0f] constrainedToSize:CGSizeMake(self.frame.size.width, 10000) lineBreakMode:UILineBreakModeWordWrap];
+    CGSize titleSize = [controller.chapter.titleEn sizeWithFont:kTitleFont constrainedToSize:CGSizeMake(self.frame.size.width, 10000) lineBreakMode:UILineBreakModeWordWrap];
     scrollView.contentSize = CGSizeMake(self.frame.size.width, contentSize.height+titleSize.height+130);
     titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.frame.size.width, titleSize.height)];
     titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+    titleLabel.font = kTitleFont;
     titleLabel.textAlignment = UITextAlignmentCenter;
-    titleLabel.numberOfLines = 3;
+    titleLabel.numberOfLines = 0;
+    titleLabel.lineBreakMode = UILineBreakModeWordWrap;
     titleLabel.text = controller.chapter.titleEn;
     [scrollView addSubview:titleLabel];
     [titleLabel release];
@@ -119,6 +120,8 @@
 -(void) dealloc {
     DBLog(@"%@",NSStringFromSelector(_cmd));
     [translationView release];
+    [subjectMenu removeFromSuperview];
+    subjectMenu = nil;
     [super dealloc];
 }
 
@@ -139,11 +142,48 @@
 
 #pragma mark - toolbar delegate
 -(void) subjectTouchEvent {
-    
+    [playBar stop];
+    if (!subjectMenu) {
+        subjectMenu = [[[SubjectMenuView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.frame] autorelease];
+        [[UIApplication sharedApplication].keyWindow addSubview:subjectMenu];
+    }
+    subjectMenu.hidden = NO;
 }
 
 -(void) chapterTypeTouchEvent:(int) eventType {
-    
+    NSString *title = nil;
+    NSString *content = nil;
+    if (eventType == 0) {//英文
+        title = controller.chapter.titleEn;
+        content = [[NSString alloc] initWithData:controller.chapter.chapterEn encoding:NSUTF8StringEncoding];
+    } else if (eventType == 1) {//中文
+        title = controller.chapter.titleZh;
+        content = [[NSString alloc] initWithData:controller.chapter.chapterZh encoding:NSUTF8StringEncoding];
+    } else if (eventType == 2) {//中英文
+        title = [NSString stringWithFormat:@"%@\n%@",controller.chapter.titleEn,controller.chapter.titleZh];
+        content = [[NSString alloc] initWithData:controller.chapter.chapterEnZh encoding:NSUTF8StringEncoding];
+    }
+    //计算内容文本高度
+    CGSize contentSize = [content sizeWithFont:kCotentFont constrainedToSize:CGSizeMake(self.frame.size.width, 10000) lineBreakMode:UILineBreakModeWordWrap];
+    content = [content stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\n"];
+    //计算标题文本高度
+    CGSize titleSize = [title sizeWithFont:kTitleFont constrainedToSize:CGSizeMake(self.frame.size.width, 10000) lineBreakMode:UILineBreakModeWordWrap];
+    //更改scrollview滑动区域高度
+    scrollView.contentSize = CGSizeMake(self.frame.size.width, contentSize.height+titleSize.height+130);
+    //设置标题文本
+    titleLabel.frame = CGRectMake(titleLabel.frame.origin.x, titleLabel.frame.origin.y, titleLabel.frame.size.width, titleSize.height);
+    titleLabel.text = title;
+    NSLog(@"%@",title);
+    //设置内容区域
+    [contentLabel removeFromSuperview];
+    contentLabel = [[IFTweetLabel alloc] initWithFrame:CGRectMake(5, titleSize.height+10, scrollView.frame.size.width-10, scrollView.contentSize.height-130)];
+    contentLabel.text = content;
+    [contentLabel setNumberOfLines:0];
+    [contentLabel setExpressions:[controller seperatorWords]];
+    [contentLabel setFont:kCotentFont];
+    [contentLabel setLinksEnabled:YES];
+    [scrollView addSubview:contentLabel];
+    [contentLabel release];
 }
 
 -(void) sentenceTouchEvent {

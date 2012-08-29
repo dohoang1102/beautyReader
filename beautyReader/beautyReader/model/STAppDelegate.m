@@ -51,6 +51,9 @@
             [fileUtil setUserDefaults:@"1" key:FIRST_INSTALL];
             DBLog(@"---> %@",@"数据库文件初始化成功!");
         }
+        //设置皮肤
+        NSString *defaultSkin = NSLocalizedStringFromTable(@"defaultSkin", @"Configuration", @"0");
+        [fileUtil setUserDefaults:defaultSkin key:Skin];
     }
     /*
     //测试文件查询

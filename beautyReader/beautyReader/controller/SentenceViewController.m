@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    navBarTintColor = [self.navigationController.navigationBar.tintColor copy];
 	self.view.frame = [UIApplication sharedApplication].keyWindow.frame;
     SentenceListView *sentenceView = [[SentenceListView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     sentenceView.delegate = sentenceView;
@@ -90,6 +91,33 @@
     FavoritesViewController *favoritesController = [[FavoritesViewController alloc] init];
     [self.navigationController pushViewController:favoritesController animated:YES];
     [favoritesController release];
+}
+
+-(void) setSkin {
+    FileUtils *fileUtil = [FileUtils sharedFileUtils];
+    NSString *skin = [fileUtil getUserDefaultsForKey:Skin];
+    if (skin == nil || (![skin isEqualToString:@"0"] && ![skin isEqualToString:@"1"])) {
+        skin = @"0";
+    }
+    if ([skin isEqualToString:@"0"]) {//标准主题
+        self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+    } else {//小娇羞主题
+        self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    }
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBar.tintColor = navBarTintColor;
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    //设置皮肤包
+    [self setSkin];
+}
+
+-(void) dealloc {
+    [navBarTintColor release];
+    [super dealloc];
 }
 
 @end

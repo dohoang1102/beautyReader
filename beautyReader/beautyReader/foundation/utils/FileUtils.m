@@ -8,6 +8,8 @@
 
 #import "FileUtils.h"
 
+NSString *SubjectNotification = @"SubjectNotification";
+
 static FileUtils *fileUtil = nil;
 @implementation FileUtils
 

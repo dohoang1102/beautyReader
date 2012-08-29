@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FavoritesViewController : UIViewController
+@interface FavoritesViewController : UIViewController {
+
+//测试主题更改使用
+    UIColor *navBarTintColor;
+}
+
+//读取并显示皮肤包
+-(void) setSkin;
 
 @end

@@ -46,6 +46,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    navBarTintColor = [self.navigationController.navigationBar.tintColor copy];
     self.view.frame = [UIApplication sharedApplication].keyWindow.frame;
 	self.title = chapter.chapterName;
     //导航左侧视图
@@ -80,6 +81,22 @@
     
     //注册气泡事件通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLongTapGesture:) name:IFTweetLabelLongTapNotification object:nil];
+    
+    //注册主题更换事件通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeSkin:) name:SubjectNotification object:nil];
+}
+
+-(void) setSkin {
+    FileUtils *fileUtil = [FileUtils sharedFileUtils];
+    NSString *skin = [fileUtil getUserDefaultsForKey:Skin];
+    if (skin == nil || (![skin isEqualToString:@"0"] && ![skin isEqualToString:@"1"])) {
+        skin = @"0";
+    }
+    if ([skin isEqualToString:@"0"]) {//标准主题
+        self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+    } else {//小娇羞主题
+        self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    }
 }
 
 -(void) showFavorite {
@@ -162,9 +179,15 @@
     if (!isFullScreen) {
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         [(ReaderView*)self.view hideToolBar];
+        CGSize contentSize = ((ReaderView*)self.view).scrollView.contentSize;
+        contentSize.height = contentSize.height - 80;
+        ((ReaderView*)self.view).scrollView.contentSize = contentSize;
     } else {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
         [(ReaderView*)self.view showToolBar];
+        CGSize contentSize = ((ReaderView*)self.view).scrollView.contentSize;
+        contentSize.height = contentSize.height + 80;
+        ((ReaderView*)self.view).scrollView.contentSize = contentSize;
     }
     isFullScreen = !isFullScreen;
 }
@@ -173,6 +196,15 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    //设置皮肤包
+    [self setSkin];
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBar.tintColor = navBarTintColor;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -196,9 +228,16 @@
 
 -(void) dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:IFTweetLabelLongTapNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:SubjectNotification object:nil];
     [chapter release];
     [wordsArray release];
+    [navBarTintColor release];
     [super dealloc];
+}
+
+-(void) changeSkin:(NSNotification*)notification {
+    DBLog(@"%@",@"更换皮肤。。。");
+    [self viewWillAppear:YES];
 }
 
 #pragma mark - tap handller

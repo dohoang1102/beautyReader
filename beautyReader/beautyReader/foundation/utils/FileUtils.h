@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *SubjectNotification;//主题更新通知
+
 #define kInitFileFolder         @"initTmp"
 #define kUnitKey                @"uKeys"
 #define FIRST_INSTALL           @"firstInstall"
+#define Skin                    @"SkinPackage"
 
 #define DATABASE_NAME           @"sql.sqlite"
 @interface FileUtils : NSObject {

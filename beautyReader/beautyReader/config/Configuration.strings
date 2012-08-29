@@ -1,0 +1,9 @@
+/* 
+  Configuration.strings
+  beautyReader
+
+  Created by zhu zhanping on 12-8-29.
+  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+*/
+
+"defaultSkin"="0";//默认主题 0：标准 1：小娇羞

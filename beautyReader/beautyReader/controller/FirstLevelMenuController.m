@@ -94,6 +94,7 @@
     if (cell == nil) {
         cell = [[[FirstLevelMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     [cell resizeCell:[self.dataSourceArray objectAtIndex:[indexPath row]]];
     return cell;

@@ -38,6 +38,10 @@
         chapterTransLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:chapterTransLabel];
         [chapterTransLabel release];
+        
+        UIView *backGroundView = [[UIView alloc] initWithFrame:CGRectZero];
+        self.backgroundView = backGroundView;
+        [backGroundView release];
     }
     return self;
 }
@@ -54,6 +58,12 @@
     chapterTransLabel.text = chapter.titleZh;
     
     height = chapterTransLabel.frame.size.height + chapterTransLabel.frame.origin.y + 10;
+    self.backgroundView.frame = self.frame;
+    if ([chapter.free boolValue]) {
+        self.backgroundView.backgroundColor = [UIColor whiteColor];
+    } else {
+        self.backgroundView.backgroundColor = [UIColor grayColor];
+    }
 }
 
 -(float) cellHeight {

@@ -12,10 +12,15 @@
 @interface SentenceViewController : UIViewController<UIGestureRecognizerDelegate> {
     CHAPTER *chapter;
     BOOL isFullScreen;
+//测试主题更改使用
+    UIColor *navBarTintColor;
 }
 
 @property (nonatomic,retain) CHAPTER *chapter;
 
 -(void) showFavorite;
+
+//读取并显示皮肤包
+-(void) setSkin;
 
 @end

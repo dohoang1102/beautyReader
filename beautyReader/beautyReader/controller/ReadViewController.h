@@ -18,6 +18,9 @@
     NSTimer *wordExplainTimer;
     int wordExplainLeftTime;
     BOOL isFullScreen;
+    
+//测试主题更改使用
+    UIColor *navBarTintColor;
 }
 
 @property (nonatomic,retain) CHAPTER *chapter;
@@ -44,5 +47,8 @@
 
 //跳转妙语页面
 -(void) showSentenceView;
+
+//读取并显示皮肤包
+-(void) setSkin;
 
 @end

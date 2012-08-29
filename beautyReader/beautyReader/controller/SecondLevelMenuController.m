@@ -88,6 +88,7 @@
     SecondLevelMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[[SecondLevelMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     [cell resizeCell:[self.dataSourceArray objectAtIndex:[indexPath row]]];
     return cell;

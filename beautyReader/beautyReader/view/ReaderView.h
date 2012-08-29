@@ -11,9 +11,11 @@
 #import "ToolsBar.h"
 #import "IFTweetLabel.h"
 #import "WordTranslateView.h"
+#import "SubjectMenuView.h"
 
 #define kCotentFont [UIFont systemFontOfSize:17.0f]
 #define kTitleHeight    25
+#define kTitleFont [UIFont boldSystemFontOfSize:20.0f] 
 
 @class ReadViewController;
 @interface ReaderView : UIView<UIGestureRecognizerDelegate,PlaBarDelegate,ToolBarDelegate> {
@@ -24,6 +26,7 @@
     ToolsBar *toolBar;
     WordTranslateView *translationView;
     UILabel *titleLabel;
+    SubjectMenuView *subjectMenu;
 }
 
 @property (nonatomic,assign) ReadViewController *controller;

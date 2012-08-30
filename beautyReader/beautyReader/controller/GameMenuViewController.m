@@ -77,7 +77,8 @@
 
 -(void) showHelpInfo {
     GameHelpViewController *gameHelper = [[GameHelpViewController alloc] init];
-    //[self presentModalViewController:gameHelper animated:YES];
+    [self presentModalViewController:gameHelper animated:YES];
+    self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [gameHelper release];
 }
 

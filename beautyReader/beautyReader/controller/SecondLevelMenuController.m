@@ -138,7 +138,7 @@
     if (!inAppPurchase) {
         inAppPurchase = [[InAppPurchaseManager alloc] init];
     }
-    inAppPurchase.productId = @"com.inpush.dd";
+    inAppPurchase.productId = @"com.beautyReader.productTest1";
     inAppPurchase.inAppPurchaseIndex = [index intValue];
     [inAppPurchase loadStore];
 }

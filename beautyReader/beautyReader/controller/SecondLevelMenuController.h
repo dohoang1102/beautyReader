@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InAppPurchaseManager.h"
+#import "MBProgressHUD.h"
 
-@interface SecondLevelMenuController : UIViewController<UITableViewDelegate,UITableViewDataSource> {
+@interface SecondLevelMenuController : UIViewController<UITableViewDelegate,UITableViewDataSource,MBProgressHUDDelegate> {
     NSArray *dataSourceArray;//二级菜单数据源
     int subjectType;//主题类型　１：春　２：夏　３：秋　４：冬
+    InAppPurchaseManager *inAppPurchase;
+    MBProgressHUD *HUD;
 }
 
 @property (nonatomic,retain) NSArray *dataSourceArray;
@@ -18,4 +22,5 @@
 
 -(void) showFavorite;
 
+-(void) inAppPurchWithCellIndex:(NSNumber*)index;
 @end

@@ -191,7 +191,7 @@
 }
 
 -(void) gameTouchEvent {
-    
+    [controller beginGame];
 }
 
 #pragma mark - translation

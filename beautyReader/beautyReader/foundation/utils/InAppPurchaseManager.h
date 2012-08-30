@@ -15,10 +15,10 @@
     SKProductsRequest *productsRequest;
     NSString *productId;//产品ID
     int inAppPurchaseIndex;//cell row
-    NSNumber *subjectId;//专辑ID
 }
 
 @property (nonatomic,retain) NSString *productId;//产品ID
+@property (nonatomic) int inAppPurchaseIndex;//cell row
 
 //发送ma购买请求
 -(void) reqestProUpgradeProductData;

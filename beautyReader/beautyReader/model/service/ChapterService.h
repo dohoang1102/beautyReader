@@ -26,6 +26,9 @@
 //更新妙句
 -(BOOL) updateSentence:(SENTENCE*)sentence;
 
+//更新文章
+-(BOOL) updateChapter:(CHAPTER*)chapter;
+
 //查询已收藏的重点词汇
 -(NSArray*) queryFavoritesWords;
 

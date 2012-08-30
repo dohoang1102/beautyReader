@@ -93,4 +93,11 @@
     return [context save:&error];
 }
 
+-(BOOL) updateChapter:(CHAPTER*)chapter {
+    CoreDataFactory *factory = [CoreDataFactory sharedInstance];
+    NSManagedObjectContext *context = [factory managedObjectContext];
+    NSError *error = nil;
+    return [context save:&error];
+}
+
 @end

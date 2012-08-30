@@ -19,7 +19,7 @@
 
 @implementation InAppPurchaseManager
 
-@synthesize productId;
+@synthesize productId,inAppPurchaseIndex;
 
 -(void) reqestProUpgradeProductData {
     NSSet *productIdentifiers = [NSSet setWithObject:productId];
@@ -56,7 +56,9 @@
     //检测网络状态是否可用
     Reachability *reachability = [Reachability reachabilityWithHostName:@"www.apple.com"];
     if (reachability.currentReachabilityStatus == NotReachable) {//无网络连接
-        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"无可用网络" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+        [alert release];
         return;
     }
     // restarts any purchases if they were interrupted last time the app was open
@@ -114,7 +116,7 @@
     // remove the transaction from the payment queue.
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
     
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:transaction, @"transaction",subjectId ,@"subjectId",[NSString stringWithFormat:@"%d",inAppPurchaseIndex],@"index", nil];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:transaction, @"transaction",[NSString stringWithFormat:@"%d",inAppPurchaseIndex],@"index", nil];
     if (wasSuccessful)
     {
         // send out a notification that we’ve finished the transaction
@@ -162,7 +164,6 @@
 
 -(void) dealloc {
     [productId release];
-    [subjectId release];
     [super dealloc];
 }
 

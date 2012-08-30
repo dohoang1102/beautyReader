@@ -14,6 +14,7 @@
 #import "Playbar.h"
 #import "FavoritesViewController.h"
 #import "SentenceViewController.h"
+#import "GameMenuViewController.h"
 
 @interface ReadViewController ()
 
@@ -103,6 +104,13 @@
     FavoritesViewController *favoritesController = [[FavoritesViewController alloc] init];
     [self.navigationController pushViewController:favoritesController animated:YES];
     [favoritesController release];
+}
+
+-(void) beginGame {
+    GameMenuViewController *gameController = [[GameMenuViewController alloc] init];
+    gameController.chapter = self.chapter;
+    [self.navigationController pushViewController:gameController animated:YES];
+    [gameController release];
 }
 
 -(void) hideExplainView {
@@ -201,6 +209,7 @@
 -(void) viewWillAppear:(BOOL)animated {
     //设置皮肤包
     [self setSkin];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 -(void) viewWillDisappear:(BOOL)animated {

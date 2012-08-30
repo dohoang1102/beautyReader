@@ -48,6 +48,9 @@
 //跳转妙语页面
 -(void) showSentenceView;
 
+//跳转到游戏页面
+-(void) beginGame;
+
 //读取并显示皮肤包
 -(void) setSkin;
 

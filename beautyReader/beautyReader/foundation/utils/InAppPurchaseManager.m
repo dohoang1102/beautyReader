@@ -8,6 +8,7 @@
 
 #import "InAppPurchaseManager.h"
 #import "Reachability.h"
+#import "MBProgressHUD.h"
 
 @interface InAppPurchaseManager()
 
@@ -19,7 +20,7 @@
 
 @implementation InAppPurchaseManager
 
-@synthesize productId,inAppPurchaseIndex;
+@synthesize productId,inAppPurchaseIndex,HUD;
 
 -(void) reqestProUpgradeProductData {
     NSSet *productIdentifiers = [NSSet setWithObject:productId];
@@ -46,6 +47,7 @@
             NSLog(@"Product price: %@" , proUpgradeProduct.price);
             NSLog(@"Product id: %@" , proUpgradeProduct.productIdentifier);
             [self purchaseProUpgrade];
+            [HUD hide:YES];
         }
     }
     [productsRequest release];
@@ -167,4 +169,18 @@
     [super dealloc];
 }
 
+#pragma mark - observer
+
+// Sent when transactions are removed from the queue (via finishTransaction:).
+- (void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray *)transactions {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+-(void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
 @end

@@ -10,6 +10,7 @@
 #import <StoreKit/StoreKit.h>
 #import "NotificationConstant.h"
 
+@class MBProgressHUD;
 @interface InAppPurchaseManager : NSObject<SKProductsRequestDelegate,SKPaymentTransactionObserver> {
     SKProduct *proUpgradeProduct;
     SKProductsRequest *productsRequest;
@@ -19,6 +20,7 @@
 
 @property (nonatomic,retain) NSString *productId;//产品ID
 @property (nonatomic) int inAppPurchaseIndex;//cell row
+@property (nonatomic,assign) MBProgressHUD *HUD;
 
 //发送ma购买请求
 -(void) reqestProUpgradeProductData;

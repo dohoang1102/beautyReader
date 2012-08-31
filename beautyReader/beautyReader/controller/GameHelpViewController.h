@@ -10,4 +10,6 @@
 
 @interface GameHelpViewController : UIViewController
 
+-(void) goBack;
+
 @end

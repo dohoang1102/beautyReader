@@ -123,7 +123,9 @@
         HUD.animationType = MBProgressHUDAnimationZoom;
         HUD.delegate = self;
         HUD.labelText = @"加载中";
-        [HUD showWhileExecuting:@selector(inAppPurchWithCellIndex:) onTarget:self withObject:[NSNumber numberWithInt:[indexPath row]] animated:YES];
+        //[HUD showWhileExecuting:@selector(inAppPurchWithCellIndex:) onTarget:self withObject:[NSNumber numberWithInt:[indexPath row]] animated:YES];
+        [self inAppPurchWithCellIndex:[NSNumber numberWithInt:[indexPath row]]];
+        [HUD show:YES];
     } else {
         ReadViewController *readViewCtrl = [[ReadViewController alloc] init];
         readViewCtrl.subjectType = self.subjectType;
@@ -140,6 +142,7 @@
     }
     inAppPurchase.productId = @"com.beautyReader.productTest1";
     inAppPurchase.inAppPurchaseIndex = [index intValue];
+    inAppPurchase.HUD = HUD;
     [inAppPurchase loadStore];
 }
 

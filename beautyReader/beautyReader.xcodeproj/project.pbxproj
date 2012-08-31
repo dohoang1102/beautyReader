@@ -49,6 +49,7 @@
 		5EDBA0C815EF65E600BE196A /* GameMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBA0C715EF65E600BE196A /* GameMenuViewController.m */; };
 		5EDBA0CC15EF664F00BE196A /* GameMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBA0CB15EF664F00BE196A /* GameMenuView.m */; };
 		5EDBA0D315EF7B7900BE196A /* GameHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDBA0D215EF7B7900BE196A /* GameHelpViewController.m */; };
+		5EDEE54F15F0AC58003F96D5 /* GameHelperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEE54E15F0AC58003F96D5 /* GameHelperView.m */; };
 		DF08861D15EE723F00DE094F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF08861C15EE723F00DE094F /* StoreKit.framework */; };
 		DF08862315EE72BC00DE094F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DF08862115EE72BC00DE094F /* Reachability.m */; };
 		DF08863115EE734900DE094F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF08863015EE734900DE094F /* CFNetwork.framework */; };
@@ -175,6 +176,8 @@
 		5EDBA0CB15EF664F00BE196A /* GameMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameMenuView.m; path = view/GameMenuView.m; sourceTree = "<group>"; };
 		5EDBA0D115EF7B7900BE196A /* GameHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameHelpViewController.h; path = controller/GameHelpViewController.h; sourceTree = "<group>"; };
 		5EDBA0D215EF7B7900BE196A /* GameHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameHelpViewController.m; path = controller/GameHelpViewController.m; sourceTree = "<group>"; };
+		5EDEE54D15F0AC58003F96D5 /* GameHelperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameHelperView.h; path = view/GameHelperView.h; sourceTree = "<group>"; };
+		5EDEE54E15F0AC58003F96D5 /* GameHelperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameHelperView.m; path = view/GameHelperView.m; sourceTree = "<group>"; };
 		DF08861C15EE723F00DE094F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		DF08861E15EE727200DE094F /* NotificationConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationConstant.h; path = foundation/utils/NotificationConstant.h; sourceTree = "<group>"; };
 		DF08862015EE72BC00DE094F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = foundation/utils/Reachability.h; sourceTree = "<group>"; };
@@ -533,6 +536,8 @@
 				DF97689A15EE5ACF00572BC2 /* SubjectMenuView.m */,
 				5EDBA0CA15EF664F00BE196A /* GameMenuView.h */,
 				5EDBA0CB15EF664F00BE196A /* GameMenuView.m */,
+				5EDEE54D15F0AC58003F96D5 /* GameHelperView.h */,
+				5EDEE54E15F0AC58003F96D5 /* GameHelperView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -843,6 +848,7 @@
 				5EDBA0C815EF65E600BE196A /* GameMenuViewController.m in Sources */,
 				5EDBA0CC15EF664F00BE196A /* GameMenuView.m in Sources */,
 				5EDBA0D315EF7B7900BE196A /* GameHelpViewController.m in Sources */,
+				5EDEE54F15F0AC58003F96D5 /* GameHelperView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,7 +895,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tao Jiang (H928759A78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -905,7 +911,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5C5BBE7D-B3C7-42CF-A7A2-57B31F7BFF62";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -915,7 +921,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tao Jiang (H928759A78)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -925,7 +931,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5C5BBE7D-B3C7-42CF-A7A2-57B31F7BFF62";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -7,6 +7,7 @@
 //
 
 #import "GameHelpViewController.h"
+#import "GameHelperView.h"
 
 @interface GameHelpViewController ()
 
@@ -26,7 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	[super viewDidLoad];
+    CGRect bounds = [UIApplication sharedApplication].keyWindow.frame;
+    self.view.frame = bounds;
+    
+    GameHelperView *gameHelper = [[GameHelperView alloc] initWithFrame:CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.height, bounds.size.width-20)];
+    gameHelper.controller = self;
+    self.view = gameHelper;
+    [gameHelper release];
 }
 
 - (void)viewDidUnload
@@ -38,6 +46,19 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void) goBack {
+ /*
+    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
+    CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:duration];
+    self.navigationController.view.transform = CGAffineTransformMakeRotation(0);
+    self.navigationController.view.bounds = [UIApplication sharedApplication].keyWindow.frame;  
+    [UIView commitAnimations];  
+  */
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

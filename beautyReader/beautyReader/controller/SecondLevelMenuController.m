@@ -115,6 +115,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CHAPTER *selectChapter = [self.dataSourceArray objectAtIndex:[indexPath row]];
+    DBLog(@"点击文章ID===========%d",[selectChapter.chapterId intValue]);
     if (![selectChapter.free boolValue]) {//收费应用
         //[self inAppPurchWithCellIndex:[indexPath row]];
         [HUD release];

@@ -2,3 +2,6 @@ conducive|[k?n'd?ktiv]|adj. 有益于⋯⋯的
 stationary|['stei?(?)n?ri ]| adj. 固定的，稳定的
 resume|['resu'mi ]|n. 履历，摘要，概略
 timeframe|['taim'freim]|n. 时间框架/范围
+family|['fæmili]|n.家庭
+continue|[kən'tinju:]|vi.继续
+social|['səuʃəl]|adj.社会的

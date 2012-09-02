@@ -35,4 +35,10 @@
 //查询已收藏的妙句
 -(NSArray*) queryFavoritesSentences;
 
+//根据ID查询文章
+-(CHAPTER*) queryChapterWithId:(int) chapterId;
+
+//更新游戏分数
+-(BOOL) updateGameScore:(NSNumber*)chapterId level:(int)level time:(int)gameTimes score:(int) score;
+
 @end

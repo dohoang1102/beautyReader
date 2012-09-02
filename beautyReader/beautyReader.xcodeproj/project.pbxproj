@@ -57,6 +57,11 @@
 		DF08863B15EE73F600DE094F /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF08863A15EE73F600DE094F /* InAppPurchaseManager.m */; };
 		DF30EEA315ED17150080DD6C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DF30EEA215ED17150080DD6C /* MBProgressHUD.m */; };
 		DF97689B15EE5ACF00572BC2 /* SubjectMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF97689A15EE5ACF00572BC2 /* SubjectMenuView.m */; };
+		DFC5314715F1979000654FCF /* GameFirstLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5314615F1979000654FCF /* GameFirstLevelView.m */; };
+		DFC5314A15F19FF300654FCF /* SystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5314915F19FF300654FCF /* SystemUtil.m */; };
+		DFC5314D15F1E14300654FCF /* FXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5314C15F1E14300654FCF /* FXLabel.m */; };
+		DFC5319815F39BC800D98DE0 /* GameThirdLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5319715F39BC800D98DE0 /* GameThirdLevelView.m */; };
+		DFC5319C15F39C2400D98DE0 /* GameThirdLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5319B15F39C2400D98DE0 /* GameThirdLevelViewController.m */; };
 		DFC5DE7615EA009200DCE9BE /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE7515EA009200DCE9BE /* MainView.m */; };
 		DFC5DE7915EA122800DCE9BE /* FirstLevelMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE7815EA122800DCE9BE /* FirstLevelMenuController.m */; };
 		DFC5DE7C15EA142A00DCE9BE /* FirstLevelMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DE7B15EA142A00DCE9BE /* FirstLevelMenuView.m */; };
@@ -73,6 +78,15 @@
 		DFC5DEAC15EA37CE00DCE9BE /* SecondLevelMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DEAB15EA37CE00DCE9BE /* SecondLevelMenuCell.m */; };
 		DFC5DEAF15EA3D2A00DCE9BE /* ChapterService.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DEAE15EA3D2A00DCE9BE /* ChapterService.m */; };
 		DFC5DEB615EA62BA00DCE9BE /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC5DEB515EA62BA00DCE9BE /* ReadViewController.m */; };
+		DFC6E4B915F303F90034DAEA /* GameResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC6E4B815F303F90034DAEA /* GameResultView.m */; };
+		DFC6E4BD15F315ED0034DAEA /* GamePauseView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC6E4BC15F315ED0034DAEA /* GamePauseView.m */; };
+		DFC6E4C015F372A20034DAEA /* GameSecondLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC6E4BF15F372A20034DAEA /* GameSecondLevelViewController.m */; };
+		DFC6E4C315F374F50034DAEA /* GameSecondLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC6E4C215F374F40034DAEA /* GameSecondLevelView.m */; };
+		DFC6E94015F10C9800D7B837 /* GameFirstLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC6E93F15F10C9800D7B837 /* GameFirstLevelViewController.m */; };
+		DFC6E94715F10F1800D7B837 /* pockerBg.png in Resources */ = {isa = PBXBuildFile; fileRef = DFC6E94615F10F1800D7B837 /* pockerBg.png */; };
+		DFC6E94A15F10F8400D7B837 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC6E94915F10F8400D7B837 /* CardView.m */; };
+		DFD49C6B15F0EC09003089D5 /* GameLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD49C6A15F0EC09003089D5 /* GameLevelViewController.m */; };
+		DFD49C6F15F0ECEA003089D5 /* GameLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD49C6E15F0ECEA003089D5 /* GameLevelView.m */; };
 		DFD6DA2B15E5160B00A7A6E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2A15E5160B00A7A6E7 /* UIKit.framework */; };
 		DFD6DA2D15E5160B00A7A6E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2C15E5160B00A7A6E7 /* Foundation.framework */; };
 		DFD6DA2F15E5160B00A7A6E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD6DA2E15E5160B00A7A6E7 /* CoreGraphics.framework */; };
@@ -190,6 +204,16 @@
 		DF30EEA215ED17150080DD6C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = foundation/utils/MBProgressHUD.m; sourceTree = "<group>"; };
 		DF97689915EE5ACF00572BC2 /* SubjectMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubjectMenuView.h; path = view/SubjectMenuView.h; sourceTree = "<group>"; };
 		DF97689A15EE5ACF00572BC2 /* SubjectMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubjectMenuView.m; path = view/SubjectMenuView.m; sourceTree = "<group>"; };
+		DFC5314515F1979000654FCF /* GameFirstLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameFirstLevelView.h; path = view/GameFirstLevelView.h; sourceTree = "<group>"; };
+		DFC5314615F1979000654FCF /* GameFirstLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameFirstLevelView.m; path = view/GameFirstLevelView.m; sourceTree = "<group>"; };
+		DFC5314815F19FF300654FCF /* SystemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SystemUtil.h; path = foundation/utils/SystemUtil.h; sourceTree = "<group>"; };
+		DFC5314915F19FF300654FCF /* SystemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SystemUtil.m; path = foundation/utils/SystemUtil.m; sourceTree = "<group>"; };
+		DFC5314B15F1E14300654FCF /* FXLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXLabel.h; path = view/FXLabel.h; sourceTree = "<group>"; };
+		DFC5314C15F1E14300654FCF /* FXLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXLabel.m; path = view/FXLabel.m; sourceTree = "<group>"; };
+		DFC5319615F39BC800D98DE0 /* GameThirdLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameThirdLevelView.h; path = view/GameThirdLevelView.h; sourceTree = "<group>"; };
+		DFC5319715F39BC800D98DE0 /* GameThirdLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameThirdLevelView.m; path = view/GameThirdLevelView.m; sourceTree = "<group>"; };
+		DFC5319A15F39C2400D98DE0 /* GameThirdLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameThirdLevelViewController.h; path = controller/GameThirdLevelViewController.h; sourceTree = "<group>"; };
+		DFC5319B15F39C2400D98DE0 /* GameThirdLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameThirdLevelViewController.m; path = controller/GameThirdLevelViewController.m; sourceTree = "<group>"; };
 		DFC5DE7415EA009200DCE9BE /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = view/MainView.h; sourceTree = "<group>"; };
 		DFC5DE7515EA009200DCE9BE /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = view/MainView.m; sourceTree = "<group>"; };
 		DFC5DE7715EA122800DCE9BE /* FirstLevelMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstLevelMenuController.h; path = controller/FirstLevelMenuController.h; sourceTree = "<group>"; };
@@ -221,6 +245,23 @@
 		DFC5DEAE15EA3D2A00DCE9BE /* ChapterService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChapterService.m; path = model/service/ChapterService.m; sourceTree = "<group>"; };
 		DFC5DEB415EA62BA00DCE9BE /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadViewController.h; path = controller/ReadViewController.h; sourceTree = "<group>"; };
 		DFC5DEB515EA62BA00DCE9BE /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadViewController.m; path = controller/ReadViewController.m; sourceTree = "<group>"; };
+		DFC6E4B715F303F90034DAEA /* GameResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResultView.h; path = view/GameResultView.h; sourceTree = "<group>"; };
+		DFC6E4B815F303F90034DAEA /* GameResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameResultView.m; path = view/GameResultView.m; sourceTree = "<group>"; };
+		DFC6E4BB15F315ED0034DAEA /* GamePauseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamePauseView.h; path = view/GamePauseView.h; sourceTree = "<group>"; };
+		DFC6E4BC15F315ED0034DAEA /* GamePauseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GamePauseView.m; path = view/GamePauseView.m; sourceTree = "<group>"; };
+		DFC6E4BE15F372A20034DAEA /* GameSecondLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameSecondLevelViewController.h; path = controller/GameSecondLevelViewController.h; sourceTree = "<group>"; };
+		DFC6E4BF15F372A20034DAEA /* GameSecondLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameSecondLevelViewController.m; path = controller/GameSecondLevelViewController.m; sourceTree = "<group>"; };
+		DFC6E4C115F374F40034DAEA /* GameSecondLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameSecondLevelView.h; path = view/GameSecondLevelView.h; sourceTree = "<group>"; };
+		DFC6E4C215F374F40034DAEA /* GameSecondLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameSecondLevelView.m; path = view/GameSecondLevelView.m; sourceTree = "<group>"; };
+		DFC6E93E15F10C9800D7B837 /* GameFirstLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameFirstLevelViewController.h; path = controller/GameFirstLevelViewController.h; sourceTree = "<group>"; };
+		DFC6E93F15F10C9800D7B837 /* GameFirstLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameFirstLevelViewController.m; path = controller/GameFirstLevelViewController.m; sourceTree = "<group>"; };
+		DFC6E94615F10F1800D7B837 /* pockerBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pockerBg.png; path = image/pockerBg.png; sourceTree = "<group>"; };
+		DFC6E94815F10F8400D7B837 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = view/CardView.h; sourceTree = "<group>"; };
+		DFC6E94915F10F8400D7B837 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = view/CardView.m; sourceTree = "<group>"; };
+		DFD49C6915F0EC09003089D5 /* GameLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLevelViewController.h; path = controller/GameLevelViewController.h; sourceTree = "<group>"; };
+		DFD49C6A15F0EC09003089D5 /* GameLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLevelViewController.m; path = controller/GameLevelViewController.m; sourceTree = "<group>"; };
+		DFD49C6D15F0ECEA003089D5 /* GameLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLevelView.h; path = view/GameLevelView.h; sourceTree = "<group>"; };
+		DFD49C6E15F0ECEA003089D5 /* GameLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLevelView.m; path = view/GameLevelView.m; sourceTree = "<group>"; };
 		DFD6DA2615E5160B00A7A6E7 /* beautyReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beautyReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFD6DA2A15E5160B00A7A6E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFD6DA2C15E5160B00A7A6E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -390,6 +431,31 @@
 			name = RegexKitLite;
 			sourceTree = "<group>";
 		};
+		DFC5314315F1974B00654FCF /* game */ = {
+			isa = PBXGroup;
+			children = (
+				5EDBA0CA15EF664F00BE196A /* GameMenuView.h */,
+				5EDBA0CB15EF664F00BE196A /* GameMenuView.m */,
+				5EDEE54D15F0AC58003F96D5 /* GameHelperView.h */,
+				5EDEE54E15F0AC58003F96D5 /* GameHelperView.m */,
+				DFD49C6D15F0ECEA003089D5 /* GameLevelView.h */,
+				DFD49C6E15F0ECEA003089D5 /* GameLevelView.m */,
+				DFC6E94815F10F8400D7B837 /* CardView.h */,
+				DFC6E94915F10F8400D7B837 /* CardView.m */,
+				DFC5314515F1979000654FCF /* GameFirstLevelView.h */,
+				DFC5314615F1979000654FCF /* GameFirstLevelView.m */,
+				DFC6E4B715F303F90034DAEA /* GameResultView.h */,
+				DFC6E4B815F303F90034DAEA /* GameResultView.m */,
+				DFC6E4BB15F315ED0034DAEA /* GamePauseView.h */,
+				DFC6E4BC15F315ED0034DAEA /* GamePauseView.m */,
+				DFC6E4C115F374F40034DAEA /* GameSecondLevelView.h */,
+				DFC6E4C215F374F40034DAEA /* GameSecondLevelView.m */,
+				DFC5319615F39BC800D98DE0 /* GameThirdLevelView.h */,
+				DFC5319715F39BC800D98DE0 /* GameThirdLevelView.m */,
+			);
+			name = game;
+			sourceTree = "<group>";
+		};
 		DFC5DE7D15EA167A00DCE9BE /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +476,33 @@
 				DFC5DEAB15EA37CE00DCE9BE /* SecondLevelMenuCell.m */,
 			);
 			name = cell;
+			sourceTree = "<group>";
+		};
+		DFC6E93C15F10C6F00D7B837 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				5EDBA0C615EF65E600BE196A /* GameMenuViewController.h */,
+				5EDBA0C715EF65E600BE196A /* GameMenuViewController.m */,
+				5EDBA0D115EF7B7900BE196A /* GameHelpViewController.h */,
+				5EDBA0D215EF7B7900BE196A /* GameHelpViewController.m */,
+				DFD49C6915F0EC09003089D5 /* GameLevelViewController.h */,
+				DFD49C6A15F0EC09003089D5 /* GameLevelViewController.m */,
+				DFC6E93E15F10C9800D7B837 /* GameFirstLevelViewController.h */,
+				DFC6E93F15F10C9800D7B837 /* GameFirstLevelViewController.m */,
+				DFC6E4BE15F372A20034DAEA /* GameSecondLevelViewController.h */,
+				DFC6E4BF15F372A20034DAEA /* GameSecondLevelViewController.m */,
+				DFC5319A15F39C2400D98DE0 /* GameThirdLevelViewController.h */,
+				DFC5319B15F39C2400D98DE0 /* GameThirdLevelViewController.m */,
+			);
+			name = game;
+			sourceTree = "<group>";
+		};
+		DFC6E94515F10EE400D7B837 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				DFC6E94615F10F1800D7B837 /* pockerBg.png */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 		DFD6DA1B15E5160A00A7A6E7 = {
@@ -465,6 +558,7 @@
 		DFD6DA3115E5160B00A7A6E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DFC6E94515F10EE400D7B837 /* image */,
 				5E01301015E60DF60070BF05 /* resources */,
 				5E01300F15E60DD20070BF05 /* config */,
 				DFD6DA3215E5160B00A7A6E7 /* beautyReader-Info.plist */,
@@ -511,6 +605,9 @@
 		DFEB65EE15E535A800BD53A5 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				DFC5314B15F1E14300654FCF /* FXLabel.h */,
+				DFC5314C15F1E14300654FCF /* FXLabel.m */,
+				DFC5314315F1974B00654FCF /* game */,
 				DFC5DE8115EA1BF900DCE9BE /* cell */,
 				DFC5DE7415EA009200DCE9BE /* MainView.h */,
 				DFC5DE7515EA009200DCE9BE /* MainView.m */,
@@ -534,10 +631,6 @@
 				5E7345CF15ECCAAE00F7AD79 /* SentenceListView.m */,
 				DF97689915EE5ACF00572BC2 /* SubjectMenuView.h */,
 				DF97689A15EE5ACF00572BC2 /* SubjectMenuView.m */,
-				5EDBA0CA15EF664F00BE196A /* GameMenuView.h */,
-				5EDBA0CB15EF664F00BE196A /* GameMenuView.m */,
-				5EDEE54D15F0AC58003F96D5 /* GameHelperView.h */,
-				5EDEE54E15F0AC58003F96D5 /* GameHelperView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -545,6 +638,7 @@
 		DFEB65EF15E535AC00BD53A5 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				DFC6E93C15F10C6F00D7B837 /* game */,
 				DFEB65F015E5369C00BD53A5 /* MainViewController.h */,
 				DFEB65F115E5369C00BD53A5 /* MainViewController.m */,
 				DFC5DE7715EA122800DCE9BE /* FirstLevelMenuController.h */,
@@ -557,10 +651,6 @@
 				5E7345C615ECC94500F7AD79 /* FavoritesViewController.m */,
 				5E7345DD15EE008100F7AD79 /* SentenceViewController.h */,
 				5E7345DE15EE008100F7AD79 /* SentenceViewController.m */,
-				5EDBA0C615EF65E600BE196A /* GameMenuViewController.h */,
-				5EDBA0C715EF65E600BE196A /* GameMenuViewController.m */,
-				5EDBA0D115EF7B7900BE196A /* GameHelpViewController.h */,
-				5EDBA0D215EF7B7900BE196A /* GameHelpViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -655,6 +745,8 @@
 				DFEB663615E53A3600BD53A5 /* FileUtils.m */,
 				5E01303715E624A20070BF05 /* SystemInitialize.h */,
 				5E01303815E624A20070BF05 /* SystemInitialize.m */,
+				DFC5314815F19FF300654FCF /* SystemUtil.h */,
+				DFC5314915F19FF300654FCF /* SystemUtil.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -743,6 +835,7 @@
 				5E01306A15E62FDB0070BF05 /* 01原文.txt in Resources */,
 				DFC5DEA315EA327C00DCE9BE /* sql.sqlite in Resources */,
 				DFD9D89115EE511D00F9DC91 /* Configuration.strings in Resources */,
+				DFC6E94715F10F1800D7B837 /* pockerBg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +942,19 @@
 				5EDBA0CC15EF664F00BE196A /* GameMenuView.m in Sources */,
 				5EDBA0D315EF7B7900BE196A /* GameHelpViewController.m in Sources */,
 				5EDEE54F15F0AC58003F96D5 /* GameHelperView.m in Sources */,
+				DFD49C6B15F0EC09003089D5 /* GameLevelViewController.m in Sources */,
+				DFD49C6F15F0ECEA003089D5 /* GameLevelView.m in Sources */,
+				DFC6E94015F10C9800D7B837 /* GameFirstLevelViewController.m in Sources */,
+				DFC6E94A15F10F8400D7B837 /* CardView.m in Sources */,
+				DFC5314715F1979000654FCF /* GameFirstLevelView.m in Sources */,
+				DFC5314A15F19FF300654FCF /* SystemUtil.m in Sources */,
+				DFC5314D15F1E14300654FCF /* FXLabel.m in Sources */,
+				DFC6E4B915F303F90034DAEA /* GameResultView.m in Sources */,
+				DFC6E4BD15F315ED0034DAEA /* GamePauseView.m in Sources */,
+				DFC6E4C015F372A20034DAEA /* GameSecondLevelViewController.m in Sources */,
+				DFC6E4C315F374F50034DAEA /* GameSecondLevelView.m in Sources */,
+				DFC5319815F39BC800D98DE0 /* GameThirdLevelView.m in Sources */,
+				DFC5319C15F39C2400D98DE0 /* GameThirdLevelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

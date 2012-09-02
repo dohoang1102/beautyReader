@@ -18,4 +18,6 @@
 
 -(void) goBack;
 
+-(void) beginGame;
+
 @end

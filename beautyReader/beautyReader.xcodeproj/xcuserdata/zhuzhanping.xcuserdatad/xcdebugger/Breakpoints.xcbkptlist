@@ -91,7 +91,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "166"
          endingLineNumber = "166"
-         landmarkName = "-wordExplainTimerStart"
+         landmarkName = "-plaBarTimerStop"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -130,7 +130,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "207"
          endingLineNumber = "207"
-         landmarkName = "-viewWillDisappear:"
+         landmarkName = "-viewDidUnload"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -143,7 +143,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "239"
          endingLineNumber = "239"
-         landmarkName = "-changeSkin:"
+         landmarkName = "-dealloc"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -163,13 +163,78 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "beautyReader/view/SecondLevelMenuCell.m"
-         timestampString = "367950056.027022"
+         filePath = "beautyReader/controller/GameLevelViewController.m"
+         timestampString = "368290579.289084"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
-         landmarkName = "-resizeCell:"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
+         landmarkName = "-gameStartLevel:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "beautyReader/view/GameFirstLevelView.m"
+         timestampString = "368251582.126706"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
+         landmarkName = "-drawRect:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "beautyReader/controller/GameFirstLevelViewController.m"
+         timestampString = "368292091.720235"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "96"
+         endingLineNumber = "96"
+         landmarkName = "-showGameResult"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "beautyReader/model/service/ChapterService.m"
+         timestampString = "368274367.46949"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
+         landmarkName = "-updateGameScore:level:time:score:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "beautyReader/controller/GameLevelViewController.m"
+         timestampString = "368290579.289084"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "beautyReader/view/GameLevelView.m"
+         timestampString = "368286054.512599"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-initWithFrame:controller:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

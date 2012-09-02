@@ -13,10 +13,10 @@
 
 @interface GAME : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * chapterId;
-@property (nonatomic, retain) NSNumber * level;
-@property (nonatomic, retain) NSNumber * score;
-@property (nonatomic, retain) NSNumber * time;
+@property (nonatomic, retain) NSNumber * chapterId;//文章ID
+@property (nonatomic, retain) NSNumber * level;//游戏关数 1 2 3分别代表第一关第二关第三关
+@property (nonatomic, retain) NSNumber * score;//游戏得分数
+@property (nonatomic, retain) NSNumber * time;//游戏时间
 @property (nonatomic, retain) CHAPTER *chapter_g;
 
 @end

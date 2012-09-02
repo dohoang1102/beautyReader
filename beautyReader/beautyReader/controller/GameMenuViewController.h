@@ -19,4 +19,6 @@
 
 -(void) showHelpInfo;
 
+-(void) showGameLevel;
+
 @end

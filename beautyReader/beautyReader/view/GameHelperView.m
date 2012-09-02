@@ -19,11 +19,13 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         // Initialization code
+        //add back button
         UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [backBtn setTitle:@"返回" forState:UIControlStateNormal];
         backBtn.frame = CGRectMake(20, 10, 65, 30);
         [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:backBtn];
+        // add content
         textView = [[UITextView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y + 40, frame.size.width, frame.size.height-40)];
         [self addSubview:textView];
         textView.font = [UIFont systemFontOfSize:17.0f];
@@ -31,12 +33,22 @@
         textView.editable = NO;
         textView.exclusiveTouch = NO;
         [textView release];
+        // add begin button
+        UIButton *beginBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [beginBtn setTitle:@"开始" forState:UIControlStateNormal];
+        beginBtn.frame = CGRectMake(frame.size.width-85, 10, 65, 30);
+        [beginBtn addTarget:self action:@selector(beginGame) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:beginBtn];
     }
     return self;
 }
 
 -(void) goBack {
     [controller goBack];
+}
+
+-(void) beginGame {
+    [controller showGameLevel];
 }
 
 // Only override drawRect: if you perform custom drawing.

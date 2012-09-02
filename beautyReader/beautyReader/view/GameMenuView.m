@@ -53,7 +53,7 @@
 }
 
 -(void) begin {
-    
+    [controller showGameLevel];
 }
 
 -(void) exit {

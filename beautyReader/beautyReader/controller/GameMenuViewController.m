@@ -10,6 +10,7 @@
 #import "CHAPTER.h"
 #import "GameMenuView.h"
 #import "GameHelpViewController.h"
+#import "GameLevelViewController.h"
 
 @interface GameMenuViewController ()
 
@@ -77,8 +78,16 @@
 
 -(void) showHelpInfo {
     GameHelpViewController *gameHelper = [[GameHelpViewController alloc] init];
+    gameHelper.chapter = chapter;
     [self.navigationController pushViewController:gameHelper animated:YES];
     [gameHelper release];
+}
+
+-(void) showGameLevel {
+    GameLevelViewController *gameLevel = [[GameLevelViewController alloc] init];
+    gameLevel.chapter = chapter;
+    [self.navigationController pushViewController:gameLevel animated:YES];
+    [gameLevel release];
 }
 
 -(void) dealloc {

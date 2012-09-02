@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameHelpViewController : UIViewController
+@class CHAPTER;
+@interface GameHelpViewController : UIViewController {
+    CHAPTER *chapter;
+}
+
+@property (nonatomic,assign) CHAPTER *chapter;
 
 -(void) goBack;
+
+-(void) showGameLevel;
 
 @end
